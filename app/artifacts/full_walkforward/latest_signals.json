@@ -1,0 +1,180 @@
+{
+  "fetched_at_utc": "",
+  "fit_cutoff": "2026-10-27",
+  "intended_execution": "next trading session",
+  "message": "Frozen completed daily cache; use refresh to request recent bars.",
+  "observation_session": "2026-11-17",
+  "signals": [
+    {
+      "action": "CASH",
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_HDFCBANK_N",
+      "feature_session": "2026-11-17",
+      "lift": 1.6339869281045751,
+      "matched_antecedents": [
+        "HDFCBANK_N",
+        "ITC_D"
+      ],
+      "matched_rule_count": 3,
+      "prediction_label": "N",
+      "reason": "matched_rule",
+      "rule_fit_cutoff": "2026-10-27",
+      "support": 0.072,
+      "ticker": "HDFCBANK.NS"
+    },
+    {
+      "action": "CASH",
+      "confidence": 0.64,
+      "consequent": "NEXT_ICICIBANK_N",
+      "feature_session": "2026-11-17",
+      "lift": 1.5686274509803921,
+      "matched_antecedents": [
+        "HDFCBANK_N",
+        "SBIN_U"
+      ],
+      "matched_rule_count": 6,
+      "prediction_label": "N",
+      "reason": "matched_rule",
+      "rule_fit_cutoff": "2026-10-27",
+      "support": 0.064,
+      "ticker": "ICICIBANK.NS"
+    },
+    {
+      "action": "CASH",
+      "confidence": 0.6428571428571429,
+      "consequent": "NEXT_INFY_D",
+      "feature_session": "2026-11-17",
+      "lift": 1.4880952380952381,
+      "matched_antecedents": [
+        "ICICIBANK_U",
+        "TCS_N"
+      ],
+      "matched_rule_count": 4,
+      "prediction_label": "D",
+      "reason": "matched_rule",
+      "rule_fit_cutoff": "2026-10-27",
+      "support": 0.036,
+      "ticker": "INFY.NS"
+    },
+    {
+      "action": "CASH",
+      "confidence": 0.75,
+      "consequent": "NEXT_ITC_N",
+      "feature_session": "2026-11-17",
+      "lift": 1.7688679245283019,
+      "matched_antecedents": [
+        "ITC_D",
+        "RELIANCE_U"
+      ],
+      "matched_rule_count": 4,
+      "prediction_label": "N",
+      "reason": "matched_rule",
+      "rule_fit_cutoff": "2026-10-27",
+      "support": 0.036,
+      "ticker": "ITC.NS"
+    },
+    {
+      "action": "CASH",
+      "confidence": 0.6428571428571429,
+      "consequent": "NEXT_LT_N",
+      "feature_session": "2026-11-17",
+      "lift": 1.8262987012987013,
+      "matched_antecedents": [
+        "ICICIBANK_U",
+        "TCS_N"
+      ],
+      "matched_rule_count": 1,
+      "prediction_label": "N",
+      "reason": "matched_rule",
+      "rule_fit_cutoff": "2026-10-27",
+      "support": 0.036,
+      "ticker": "LT.NS"
+    },
+    {
+      "action": "CASH",
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_MARUTI_D",
+      "feature_session": "2026-11-17",
+      "lift": 1.6835016835016836,
+      "matched_antecedents": [
+        "ITC_D",
+        "RELIANCE_U"
+      ],
+      "matched_rule_count": 2,
+      "prediction_label": "D",
+      "reason": "matched_rule",
+      "rule_fit_cutoff": "2026-10-27",
+      "support": 0.032,
+      "ticker": "MARUTI.NS"
+    },
+    {
+      "action": "CASH",
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_RELIANCE_N",
+      "feature_session": "2026-11-17",
+      "lift": 1.6420361247947455,
+      "matched_antecedents": [
+        "ICICIBANK_U",
+        "TCS_N"
+      ],
+      "matched_rule_count": 2,
+      "prediction_label": "N",
+      "reason": "matched_rule",
+      "rule_fit_cutoff": "2026-10-27",
+      "support": 0.032,
+      "ticker": "RELIANCE.NS"
+    },
+    {
+      "action": "CASH",
+      "confidence": 0.7647058823529411,
+      "consequent": "NEXT_SBIN_D",
+      "feature_session": "2026-11-17",
+      "lift": 2.482811306340718,
+      "matched_antecedents": [
+        "RELIANCE_U",
+        "TCS_N"
+      ],
+      "matched_rule_count": 3,
+      "prediction_label": "D",
+      "reason": "matched_rule",
+      "rule_fit_cutoff": "2026-10-27",
+      "support": 0.052,
+      "ticker": "SBIN.NS"
+    },
+    {
+      "action": "CASH",
+      "confidence": 0.6818181818181818,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "feature_session": "2026-11-17",
+      "lift": 1.7393320964749537,
+      "matched_antecedents": [
+        "SBIN_U",
+        "TCS_N"
+      ],
+      "matched_rule_count": 16,
+      "prediction_label": "N",
+      "reason": "matched_rule",
+      "rule_fit_cutoff": "2026-10-27",
+      "support": 0.06,
+      "ticker": "SUNPHARMA.NS"
+    },
+    {
+      "action": "CASH",
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_TCS_D",
+      "feature_session": "2026-11-17",
+      "lift": 1.3869625520110958,
+      "matched_antecedents": [
+        "HDFCBANK_N",
+        "TCS_N"
+      ],
+      "matched_rule_count": 1,
+      "prediction_label": "D",
+      "reason": "matched_rule",
+      "rule_fit_cutoff": "2026-10-27",
+      "support": 0.048,
+      "ticker": "TCS.NS"
+    }
+  ],
+  "status": "cached"
+}

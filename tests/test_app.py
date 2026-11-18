@@ -15,6 +15,12 @@ BUNDLE = ROOT / "app/artifacts/day1_holdout"
 ENTRY = ROOT / "app/streamlit_app.py"
 
 
+@pytest.fixture(autouse=True)
+def legacy_runtime_bundle(monkeypatch):
+    """Keep the original engineering-checkpoint regressions on their own bundle."""
+    monkeypatch.setenv("ADM_RESULTS_DIR", str(BUNDLE))
+
+
 def results_module():
     try:
         from app import results

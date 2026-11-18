@@ -1,0 +1,702 @@
+{
+  "annualization": "Inclusive first-to-last execution calendar days; 365.25 days/year CAGR; sample daily std and sqrt(252) Sharpe at zero risk-free rate.",
+  "asymmetry_convention": "Held-out precision and prediction-count-weighted fold/stock class base rates; lift=total correct/total expected correct. Unknown predictions stay unknown.",
+  "asymmetry_summary": [
+    {
+      "base_rate": 0.31746031746031744,
+      "correct_count": 2,
+      "direction": "U",
+      "expected_correct": 0.9523809523809523,
+      "held_out_lift": 2.1,
+      "precision": 0.6666666666666666,
+      "prediction_count": 3,
+      "variant": "FIXED"
+    },
+    {
+      "base_rate": 0.3594799883143441,
+      "correct_count": 60,
+      "direction": "D",
+      "expected_correct": 58.59523809523809,
+      "held_out_lift": 1.0239739943112558,
+      "precision": 0.36809815950920244,
+      "prediction_count": 163,
+      "variant": "FIXED"
+    },
+    {
+      "base_rate": 0.3619619751782413,
+      "correct_count": 412,
+      "direction": "U",
+      "expected_correct": 391.6428571428571,
+      "held_out_lift": 1.0519788436987052,
+      "precision": 0.3807763401109057,
+      "prediction_count": 1082,
+      "variant": "TUNED"
+    },
+    {
+      "base_rate": 0.41117256405421826,
+      "correct_count": 974,
+      "direction": "D",
+      "expected_correct": 934.5952380952381,
+      "held_out_lift": 1.042162382493058,
+      "precision": 0.4285085789705235,
+      "prediction_count": 2273,
+      "variant": "TUNED"
+    }
+  ],
+  "availability_convention": "Dates mean information after that exchange session closes; fitting outcomes mature at execution close.",
+  "benchmark": "^NSEI",
+  "candidate_count_per_fold": 81,
+  "code_sha256": {
+    "__init__.py": "92ab947e41b58074490cbf4d7065d2c3027d825d06cf905acd23469b37754325",
+    "asymmetry.py": "c75ef5db40b04e406074258a5b3845a31d67990e2eb81868a7297ac23288250e",
+    "backtest.py": "ec5bbee763f8a8bb296d4ff0f27f4e746e4eb16c713d2349789cb6063645568d",
+    "data.py": "d5e22494054597455acf9838cf553efcc1be2c271d5d44083eef2ffc43a0a822",
+    "experiment.py": "fb1cd6d55a89174ee151a6ffc853a3ec0acebc2b5bec49c60c09f4f9c22d5069",
+    "labels.py": "597afd3abac89fc3404cbcac5f1bf9f598b61e100ab01a490eb042ccde8aae97",
+    "mining.py": "b0271cc5f90ae7569c25e279695eb173008b4a57885ec5bc667480ba504055d0",
+    "pipeline.py": "ce2dd63bf4a1e50711dac75f6d24c18f252d411b7acb60e7b1f7e5bf34f33f78",
+    "repair.py": "7484efd0c67cd89c69625584817cd35a7b55eac5074a4a1ba9008e5385e1432d",
+    "signals.py": "751193bf2f7b68494625a2f6e27387e89a75eb8d451011c11d6408c841b8fb70",
+    "walkforward.py": "690f0af258d37291aa261893bbd8a7ccf2f2b65f6bd571c5335d4438b11e0402"
+  },
+  "comparison_at_0_1_percent_cost": [
+    {
+      "applied_cost": 0.001,
+      "cagr": -0.03752337423395599,
+      "cost": 0.001,
+      "max_drawdown": 0.13944575403689208,
+      "net_return": -0.13300352363393608,
+      "profit_factor": 0.7284711999789325,
+      "sharpe": -1.5971149571616163,
+      "strategy": "TUNED_PORTFOLIO",
+      "trade_count": 1082.0,
+      "win_rate": 0.4537892791127542
+    },
+    {
+      "applied_cost": 0.001,
+      "cagr": 9.432937535109368e-05,
+      "cost": 0.001,
+      "max_drawdown": 0.0014393825954861494,
+      "net_return": 0.00035205340041000177,
+      "profit_factor": 1.244367769993604,
+      "sharpe": 0.09664535185186061,
+      "strategy": "FIXED_PORTFOLIO",
+      "trade_count": 3.0,
+      "win_rate": 0.6666666666666666
+    },
+    {
+      "applied_cost": 0.0,
+      "cagr": 0.1032997943937369,
+      "cost": 0.001,
+      "max_drawdown": 0.15766678303740744,
+      "net_return": 0.4431752511527163,
+      "profit_factor": null,
+      "sharpe": 0.8502342368754274,
+      "strategy": "NIFTY50_PRICE_INDEX",
+      "trade_count": null,
+      "win_rate": null
+    },
+    {
+      "applied_cost": 0.001,
+      "cagr": 0.10584852322373774,
+      "cost": 0.001,
+      "max_drawdown": 0.18169591460623624,
+      "net_return": 0.4556555436497711,
+      "profit_factor": 10.184274843192348,
+      "sharpe": 0.8715914710359839,
+      "strategy": "BUY_HOLD_BASKET",
+      "trade_count": 10.0,
+      "win_rate": 0.7
+    }
+  ],
+  "cost_convention": "Flat total round-trip entry-notional fraction. Same frozen decisions at every cost. Holding controls pay once, half entry/half exit; index reference uncosted.",
+  "cost_scenarios": [
+    0.0005,
+    0.001,
+    0.005
+  ],
+  "created_at_utc": "2026-11-18T19:04:35.557575+00:00",
+  "evaluation_scope": "nested_walk_forward",
+  "fallback_folds": 0,
+  "files": {
+    "asymmetry.csv": "fa3fa2df8d07a01a1c3653b856a18c597c1ee6a3a3d46fa5b30af41f15ae8107",
+    "asymmetry_groups.csv": "6fd9d3cb647a4948b4d8af94918c10d52b01af3e92d97ef8545cca5318781649",
+    "equity.csv": "6f1e0e9e668aaacc797bf817c0ffa4ee3c5097f2f14e6f55821e300070c4ea88",
+    "folds.csv": "b63f875215a00dab386d22b44c70f4e8725432b6f08e90f2bfcc214a6242e120",
+    "latest_model.json": "8f7d45740c2f50992c1d7cf634304b93b5f8c4b56b97bdbd2504da0ee24f86ac",
+    "latest_prices.csv": "b030f5bd473ed411d2caeb5c2046461a59d125219a064556d8ddda5609e4463e",
+    "latest_signals.json": "f8113525a8521ccb76255a1504941b03bb0dd81e6776f8e45ff7ece783aaa263",
+    "metrics.csv": "a4a9c332857aa976eecd91fb6af0e4e5038f22a2557bebe517956da36d693cb4",
+    "metrics.json": "c142ceb36633d6b07d4527456916cb2a30cd71ba320fb9430947bd5c21817eef",
+    "outcomes.csv": "53b83ea55e4c97e7f2daa8b31053eb2f4f3bc510d7d6820dc12a0f7f2c8a8929",
+    "predictions.csv": "cf87771aa499ced526751f18c8726dd5b463f4cc913d0c95c718875285b3970a",
+    "rules.json": "9fc8197562c146ff1c27f49f9dda9ffdd14d16d162ac8c288715aabe37746077",
+    "trades.csv": "bc102e6ad8e17b34c213d256b46341db3ba0c6adbdad396b82c467904dd57065",
+    "training_sessions.csv": "07f33be554c19822cbc8aa0f02066ac93d5e86a0b7550822454f0cd6b39d0eeb",
+    "tuning.csv": "d021e936e6281b6a327f2d83bacce5b7c15986def2b91958a2e6583e26b13d5a"
+  },
+  "fill_convention": "Idealized next open to same-session close, fractional shares, 1/N current equity, cash earns zero; capital compounds continuously across all folds.",
+  "fixed_parameters": {
+    "min_confidence": 0.6,
+    "min_support": 0.02,
+    "theta": 0.005,
+    "window": 500
+  },
+  "fold_count": 44,
+  "grid": [
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.01,
+      "theta": 0.0025,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.01,
+      "theta": 0.0025,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.01,
+      "theta": 0.0025,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.01,
+      "theta": 0.005,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.01,
+      "theta": 0.005,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.01,
+      "theta": 0.005,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.01,
+      "theta": 0.01,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.01,
+      "theta": 0.01,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.01,
+      "theta": 0.01,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.02,
+      "theta": 0.0025,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.02,
+      "theta": 0.0025,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.02,
+      "theta": 0.0025,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.02,
+      "theta": 0.005,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.02,
+      "theta": 0.005,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.02,
+      "theta": 0.005,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.02,
+      "theta": 0.01,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.02,
+      "theta": 0.01,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.02,
+      "theta": 0.01,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.05,
+      "theta": 0.0025,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.05,
+      "theta": 0.0025,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.05,
+      "theta": 0.0025,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.05,
+      "theta": 0.005,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.05,
+      "theta": 0.005,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.05,
+      "theta": 0.005,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.05,
+      "theta": 0.01,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.05,
+      "theta": 0.01,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.55,
+      "min_support": 0.05,
+      "theta": 0.01,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.01,
+      "theta": 0.0025,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.01,
+      "theta": 0.0025,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.01,
+      "theta": 0.0025,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.01,
+      "theta": 0.005,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.01,
+      "theta": 0.005,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.01,
+      "theta": 0.005,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.01,
+      "theta": 0.01,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.01,
+      "theta": 0.01,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.01,
+      "theta": 0.01,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.02,
+      "theta": 0.0025,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.02,
+      "theta": 0.0025,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.02,
+      "theta": 0.0025,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.02,
+      "theta": 0.005,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.02,
+      "theta": 0.005,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.02,
+      "theta": 0.005,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.02,
+      "theta": 0.01,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.02,
+      "theta": 0.01,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.02,
+      "theta": 0.01,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.05,
+      "theta": 0.0025,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.05,
+      "theta": 0.0025,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.05,
+      "theta": 0.0025,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.05,
+      "theta": 0.005,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.05,
+      "theta": 0.005,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.05,
+      "theta": 0.005,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.05,
+      "theta": 0.01,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.05,
+      "theta": 0.01,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.6,
+      "min_support": 0.05,
+      "theta": 0.01,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.01,
+      "theta": 0.0025,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.01,
+      "theta": 0.0025,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.01,
+      "theta": 0.0025,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.01,
+      "theta": 0.005,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.01,
+      "theta": 0.005,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.01,
+      "theta": 0.005,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.01,
+      "theta": 0.01,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.01,
+      "theta": 0.01,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.01,
+      "theta": 0.01,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.02,
+      "theta": 0.0025,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.02,
+      "theta": 0.0025,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.02,
+      "theta": 0.0025,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.02,
+      "theta": 0.005,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.02,
+      "theta": 0.005,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.02,
+      "theta": 0.005,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.02,
+      "theta": 0.01,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.02,
+      "theta": 0.01,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.02,
+      "theta": 0.01,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.05,
+      "theta": 0.0025,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.05,
+      "theta": 0.0025,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.05,
+      "theta": 0.0025,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.05,
+      "theta": 0.005,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.05,
+      "theta": 0.005,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.05,
+      "theta": 0.005,
+      "window": 500
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.05,
+      "theta": 0.01,
+      "window": "expanding"
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.05,
+      "theta": 0.01,
+      "window": 250
+    },
+    {
+      "min_confidence": 0.7,
+      "min_support": 0.05,
+      "theta": 0.01,
+      "window": 500
+    }
+  ],
+  "initial_capital": 100000.0,
+  "limitations": [
+    "Current convenience sample; historical index membership is not reconstructed.",
+    "Historical adjusted prices are not a point-in-time archive.",
+    "Idealized fills and flat friction scenarios, without broker-specific charges or liquidity modeling.",
+    "81 candidates may overfit validation; no formal significance claim.",
+    "Adaptive window selection alone does not establish concept drift.",
+    "Tuned-vs-fixed comparison combines window and threshold tuning; it is not a G1/G2 ablation."
+  ],
+  "metric_conventions": "Drawdown includes initial capital; profit factor and win rate use net currency PnL; undefined is null and positive infinity is Infinity text.",
+  "min_validation_trade_sessions": 5,
+  "min_validation_trades": 20,
+  "prediction_rows": 18340,
+  "requested_test_sessions": 21,
+  "schema_version": 2,
+  "selection_cost": 0.001,
+  "software": {
+    "mlxtend": "0.25.0",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "python": "3.13.12"
+  },
+  "source_audit_files": {
+    "corrections.json": "b534a5dd0e521bbb6468473f1a56e1ef43fd661e43f57b652595dda3b409f875",
+    "sec_bhavdata_full_18032025.csv": "f3123b48c1f8ad466bb108a60847ae11e5d5b17967c9616df447dd24753fef8a",
+    "sec_bhavdata_full_19032025.csv": "c979ca7db910c6555004d1d30b0e87a162795d99597818b082b0926a9f68fc54",
+    "source_manifest.json": "d6ff45b1a4f33bfacecc9c6ecdc5e007c1471edbab1932bbd2aff515bf7fc72d"
+  },
+  "source_correction": {
+    "date": "2025-03-18",
+    "method": "Replace only verified flat zero-volume placeholders with NSE EQ OHLCV; apply previous-session adjusted/NSE-close scale; verify following-session scale within 1e-5.",
+    "repair_code_sha256": "7484efd0c67cd89c69625584817cd35a7b55eac5074a4a1ba9008e5385e1432d",
+    "row_count": 9,
+    "source_sha256": "4db6f1637529f374f1576a1b46d99d3e3c77e47c099c3f239ae50c04c1de0802",
+    "sources": [
+      "https://archives.nseindia.com/products/content/sec_bhavdata_full_18032025.csv",
+      "https://archives.nseindia.com/products/content/sec_bhavdata_full_19032025.csv"
+    ],
+    "volume_convention": "Corrected volume is the primary exchange's traded share count; volume is only an execution-validity check, never a model feature."
+  },
+  "source_end": "2026-11-17",
+  "source_sessions": 1482,
+  "source_sha256": "5286eeaa261ed3abdae66fc105971a2dc78c0e5d134dd761f2bd6fbbe70f0c34",
+  "source_start": "2020-11-17",
+  "status": "complete_walk_forward_computed_offline",
+  "stocks": [
+    "RELIANCE.NS",
+    "TCS.NS",
+    "INFY.NS",
+    "HDFCBANK.NS",
+    "ICICIBANK.NS",
+    "SBIN.NS",
+    "ITC.NS",
+    "LT.NS",
+    "SUNPHARMA.NS",
+    "MARUTI.NS"
+  ],
+  "test_end": "2026-11-17",
+  "test_sessions": 917,
+  "test_start": "2023-02-24",
+  "tie_break": "maximum eligible validation net return, then ascending canonical parameter JSON",
+  "tuning_rows": 3564,
+  "validation_sessions": 63,
+  "window_selection_counts": {
+    "250": 27,
+    "500": 10,
+    "expanding": 7
+  }
+}

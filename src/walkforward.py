@@ -136,7 +136,7 @@ def run_fold(
     grid: TuningGrid = TuningGrid(), fixed: RuleParameters = FIXED_PARAMETERS,
     validation_sessions: int = 63, test_sessions: int = 21,
     min_validation_trades: int = 20, min_validation_trade_sessions: int = 5,
-    initial_capital: float = 100000.0,
+    initial_capital: float = 100000.0, score_outer: bool = True,
 ) -> FoldResult:
     """Tune only before the outer cutoff, then freeze both tuned and fixed rules.
 
@@ -235,7 +235,7 @@ def run_fold(
 
     # All decisions are frozen before costs or outer realized returns are scored.
     metric_rows, curves, ledgers = [], [], []
-    for cost in COST_SCENARIOS:
+    for cost in COST_SCENARIOS if score_outer else ():
         paths = {
             f"{variant}_PORTFOLIO": simulate_strategy(
                 prices, predictions.loc[predictions.variant.eq(variant)].copy(), config,
@@ -262,8 +262,9 @@ def run_fold(
     }
     return FoldResult(
         outer_cutoff, inner_cutoff, validation_days, executions, selected, models,
-        tuning, predictions, pd.concat(session_frames, ignore_index=True), pd.DataFrame(metric_rows),
-        pd.concat(curves, ignore_index=True),
+        tuning, predictions, pd.concat(session_frames, ignore_index=True),
+        pd.DataFrame(metric_rows) if metric_rows else pd.DataFrame(columns=["strategy", "cost", "applied_cost"]),
+        pd.concat(curves, ignore_index=True) if curves else pd.DataFrame(columns=["execution_session", "equity", "daily_return", "strategy", "cost", "applied_cost"]),
         pd.concat(ledgers, ignore_index=True) if ledgers else pd.DataFrame(columns=[*TRADE_COLUMNS, "strategy", "cost"]),
         protocol,
     )

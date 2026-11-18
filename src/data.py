@@ -276,6 +276,15 @@ def load_snapshot(destination: str | Path) -> tuple[pd.DataFrame, dict]:
         raise DataValidationError(f"Cannot read a complete snapshot at {destination}: {exc}") from exc
     if hashlib.sha256(csv_bytes).hexdigest() != manifest.get("sha256"):
         raise DataValidationError("Snapshot checksum mismatch: the saved price bytes changed.")
+    for name, expected in manifest.get("auxiliary_files", {}).items():
+        if not isinstance(name, str) or Path(name).name != name:
+            raise DataValidationError("Invalid snapshot audit filename.")
+        try:
+            actual = hashlib.sha256((destination / name).read_bytes()).hexdigest()
+        except OSError as exc:
+            raise DataValidationError("Missing snapshot audit checksum file.") from exc
+        if actual != expected:
+            raise DataValidationError("Snapshot audit checksum mismatch: primary correction evidence changed.")
     if manifest.get("excluded_non_sessions"):
         try:
             audit_bytes = (destination / "excluded_non_sessions.csv").read_bytes()

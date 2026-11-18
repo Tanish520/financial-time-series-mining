@@ -43,6 +43,7 @@ python-dateutil==4.0.0
 python-multipart==0.0.34
 pytz==2026.6
 referencing==0.37.0
+reportlab==5.1.0
 requests==2.34.2
 rpds-py==2026.9.1
 scikit-learn==1.9.1

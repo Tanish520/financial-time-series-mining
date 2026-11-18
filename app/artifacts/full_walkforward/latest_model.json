@@ -1,0 +1,5319 @@
+{
+  "benchmark": "^NSEI",
+  "fallback": null,
+  "fit_cutoff": "2026-10-27",
+  "parameters": {
+    "min_confidence": 0.55,
+    "min_support": 0.02,
+    "theta": 0.005,
+    "window": 250
+  },
+  "rules": [
+    {
+      "antecedent_count": 9,
+      "antecedent_support": 0.036,
+      "antecedents": [
+        "INFY_U",
+        "TCS_D"
+      ],
+      "confidence": 0.8888888888888888,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 8,
+      "lift": 2.178649237472767,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 10,
+      "antecedent_support": 0.04,
+      "antecedents": [
+        "LT_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.8,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 8,
+      "lift": 1.8867924528301887,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 13,
+      "antecedent_support": 0.052,
+      "antecedents": [
+        "INFY_D",
+        "TCS_U"
+      ],
+      "confidence": 0.7692307692307693,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 10,
+      "lift": 2.1367521367521367,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "RELIANCE_U",
+        "TCS_N"
+      ],
+      "confidence": 0.7647058823529411,
+      "consequent": "NEXT_SBIN_D",
+      "consequent_count": 77,
+      "consequent_support": 0.308,
+      "joint_count": 13,
+      "lift": 2.482811306340718,
+      "support": 0.052,
+      "target_label": "D",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "ITC_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.75,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 9,
+      "lift": 1.8203883495145632,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "ITC_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.75,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 9,
+      "lift": 1.7688679245283019,
+      "support": 0.036,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 11,
+      "antecedent_support": 0.044,
+      "antecedents": [
+        "RELIANCE_U",
+        "SBIN_D"
+      ],
+      "confidence": 0.7272727272727273,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 8,
+      "lift": 1.7152658662092624,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 11,
+      "antecedent_support": 0.044,
+      "antecedents": [
+        "HDFCBANK_U",
+        "LT_D"
+      ],
+      "confidence": 0.7272727272727273,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 8,
+      "lift": 1.6835016835016836,
+      "support": 0.032,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 7,
+      "antecedent_support": 0.028,
+      "antecedents": [
+        "LT_U",
+        "SBIN_D"
+      ],
+      "confidence": 0.7142857142857143,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 5,
+      "lift": 1.6534391534391535,
+      "support": 0.02,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 10,
+      "antecedent_support": 0.04,
+      "antecedents": [
+        "LT_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.7,
+      "consequent": "NEXT_TCS_N",
+      "consequent_count": 71,
+      "consequent_support": 0.284,
+      "joint_count": 7,
+      "lift": 2.464788732394366,
+      "support": 0.028,
+      "target_label": "N",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 30,
+      "antecedent_support": 0.12,
+      "antecedents": [
+        "RELIANCE_D",
+        "SBIN_N"
+      ],
+      "confidence": 0.7,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 21,
+      "lift": 1.6990291262135921,
+      "support": 0.084,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 13,
+      "antecedent_support": 0.052,
+      "antecedents": [
+        "HDFCBANK_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.6923076923076923,
+      "consequent": "NEXT_HDFCBANK_D",
+      "consequent_count": 75,
+      "consequent_support": 0.3,
+      "joint_count": 9,
+      "lift": 2.3076923076923075,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 13,
+      "antecedent_support": 0.052,
+      "antecedents": [
+        "HDFCBANK_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.6923076923076923,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 9,
+      "lift": 1.6025641025641026,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "ICICIBANK_U",
+        "SBIN_D"
+      ],
+      "confidence": 0.6875,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 11,
+      "lift": 1.6850490196078431,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "SUNPHARMA_D",
+        "TCS_U"
+      ],
+      "confidence": 0.6842105263157895,
+      "consequent": "NEXT_ICICIBANK_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 13,
+      "lift": 2.2506925207756234,
+      "support": 0.052,
+      "target_label": "U",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "ICICIBANK_D",
+        "INFY_N"
+      ],
+      "confidence": 0.6842105263157895,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 13,
+      "lift": 1.7278043593833068,
+      "support": 0.052,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "MARUTI_N",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.6842105263157895,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 13,
+      "lift": 1.6137040714995035,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "RELIANCE_U",
+        "TCS_D"
+      ],
+      "confidence": 0.6842105263157895,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 13,
+      "lift": 1.6137040714995035,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 22,
+      "antecedent_support": 0.088,
+      "antecedents": [
+        "SBIN_U",
+        "TCS_N"
+      ],
+      "confidence": 0.6818181818181818,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 15,
+      "lift": 1.7393320964749537,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 9,
+      "antecedent_support": 0.036,
+      "antecedents": [
+        "INFY_U",
+        "TCS_D"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_MARUTI_U",
+      "consequent_count": 72,
+      "consequent_support": 0.288,
+      "joint_count": 6,
+      "lift": 2.314814814814815,
+      "support": 0.024,
+      "target_label": "U",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "MARUTI_U",
+        "TCS_D"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_LT_D",
+      "consequent_count": 84,
+      "consequent_support": 0.336,
+      "joint_count": 12,
+      "lift": 1.9841269841269842,
+      "support": 0.048,
+      "target_label": "D",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 9,
+      "antecedent_support": 0.036,
+      "antecedents": [
+        "LT_D",
+        "MARUTI_U"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_LT_D",
+      "consequent_count": 84,
+      "consequent_support": 0.336,
+      "joint_count": 6,
+      "lift": 1.9841269841269842,
+      "support": 0.024,
+      "target_label": "D",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 9,
+      "antecedent_support": 0.036,
+      "antecedents": [
+        "LT_D",
+        "MARUTI_U"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 6,
+      "lift": 1.9157088122605364,
+      "support": 0.024,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 36,
+      "antecedent_support": 0.144,
+      "antecedents": [
+        "MARUTI_U",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 24,
+      "lift": 1.7006802721088434,
+      "support": 0.096,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "MARUTI_U",
+        "TCS_D"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 12,
+      "lift": 1.7006802721088434,
+      "support": 0.048,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "ITC_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 8,
+      "lift": 1.6835016835016836,
+      "support": 0.032,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "ITC_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 8,
+      "lift": 1.6835016835016836,
+      "support": 0.032,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "HDFCBANK_N",
+        "ITC_D"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 18,
+      "lift": 1.6339869281045751,
+      "support": 0.072,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 21,
+      "antecedent_support": 0.084,
+      "antecedents": [
+        "HDFCBANK_N",
+        "ICICIBANK_D"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 14,
+      "lift": 1.6339869281045751,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "ITC_U",
+        "MARUTI_D"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 8,
+      "lift": 1.6339869281045751,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "RELIANCE_D",
+        "TCS_N"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 12,
+      "lift": 1.6181229773462784,
+      "support": 0.048,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 15,
+      "antecedent_support": 0.06,
+      "antecedents": [
+        "INFY_N",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 10,
+      "lift": 1.6181229773462784,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 30,
+      "antecedent_support": 0.12,
+      "antecedents": [
+        "LT_U",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 20,
+      "lift": 1.5723270440251573,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 30,
+      "antecedent_support": 0.12,
+      "antecedents": [
+        "RELIANCE_U",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 20,
+      "lift": 1.5723270440251573,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 9,
+      "antecedent_support": 0.036,
+      "antecedents": [
+        "INFY_U",
+        "TCS_D"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 6,
+      "lift": 1.5723270440251573,
+      "support": 0.024,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "ITC_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.6666666666666666,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 8,
+      "lift": 1.5432098765432098,
+      "support": 0.032,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "ITC_D",
+        "TCS_N"
+      ],
+      "confidence": 0.65,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 13,
+      "lift": 1.6581632653061225,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "HDFCBANK_U",
+        "MARUTI_D"
+      ],
+      "confidence": 0.65,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 13,
+      "lift": 1.5931372549019607,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "INFY_N",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.65,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 13,
+      "lift": 1.5931372549019607,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "HDFCBANK_U",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.6470588235294118,
+      "consequent": "NEXT_LT_U",
+      "consequent_count": 78,
+      "consequent_support": 0.312,
+      "joint_count": 11,
+      "lift": 2.0739064856711917,
+      "support": 0.044,
+      "target_label": "U",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "SBIN_D",
+        "TCS_N"
+      ],
+      "confidence": 0.6470588235294118,
+      "consequent": "NEXT_RELIANCE_D",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 11,
+      "lift": 1.8593644354293442,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "ICICIBANK_D",
+        "LT_U"
+      ],
+      "confidence": 0.6470588235294118,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 11,
+      "lift": 1.6339869281045751,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "LT_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.6470588235294118,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 11,
+      "lift": 1.6339869281045751,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "ICICIBANK_D",
+        "MARUTI_U"
+      ],
+      "confidence": 0.6470588235294118,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 11,
+      "lift": 1.5705311250713878,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "ICICIBANK_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.6470588235294118,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 11,
+      "lift": 1.5260821309655939,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "RELIANCE_U",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.6428571428571429,
+      "consequent": "NEXT_ICICIBANK_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 9,
+      "lift": 2.1146616541353382,
+      "support": 0.036,
+      "target_label": "U",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ICICIBANK_U",
+        "TCS_N"
+      ],
+      "confidence": 0.6428571428571429,
+      "consequent": "NEXT_LT_N",
+      "consequent_count": 88,
+      "consequent_support": 0.352,
+      "joint_count": 9,
+      "lift": 1.8262987012987013,
+      "support": 0.036,
+      "target_label": "N",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ICICIBANK_U",
+        "INFY_N"
+      ],
+      "confidence": 0.6428571428571429,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 9,
+      "lift": 1.6399416909620992,
+      "support": 0.036,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ITC_U",
+        "TCS_N"
+      ],
+      "confidence": 0.6428571428571429,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 9,
+      "lift": 1.5756302521008403,
+      "support": 0.036,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ITC_U",
+        "TCS_N"
+      ],
+      "confidence": 0.6428571428571429,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 9,
+      "lift": 1.5756302521008403,
+      "support": 0.036,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ICICIBANK_U",
+        "INFY_N"
+      ],
+      "confidence": 0.6428571428571429,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 9,
+      "lift": 1.5603328710124826,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ICICIBANK_U",
+        "TCS_N"
+      ],
+      "confidence": 0.6428571428571429,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 9,
+      "lift": 1.4880952380952381,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ITC_U",
+        "TCS_N"
+      ],
+      "confidence": 0.6428571428571429,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 9,
+      "lift": 1.4880952380952381,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "LT_U",
+        "TCS_D"
+      ],
+      "confidence": 0.64,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 16,
+      "lift": 1.6161616161616161,
+      "support": 0.064,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "HDFCBANK_N",
+        "SBIN_U"
+      ],
+      "confidence": 0.64,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.5686274509803921,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "HDFCBANK_N",
+        "SBIN_U"
+      ],
+      "confidence": 0.64,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.5686274509803921,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "ITC_U",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.64,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.5686274509803921,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 11,
+      "antecedent_support": 0.044,
+      "antecedents": [
+        "ITC_U",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.6363636363636364,
+      "consequent": "NEXT_ICICIBANK_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 7,
+      "lift": 2.0933014354066986,
+      "support": 0.028,
+      "target_label": "U",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 11,
+      "antecedent_support": 0.044,
+      "antecedents": [
+        "INFY_N",
+        "ITC_U"
+      ],
+      "confidence": 0.6363636363636364,
+      "consequent": "NEXT_LT_U",
+      "consequent_count": 78,
+      "consequent_support": 0.312,
+      "joint_count": 7,
+      "lift": 2.0396270396270397,
+      "support": 0.028,
+      "target_label": "U",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 11,
+      "antecedent_support": 0.044,
+      "antecedents": [
+        "HDFCBANK_U",
+        "LT_D"
+      ],
+      "confidence": 0.6363636363636364,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 7,
+      "lift": 1.8286311389759666,
+      "support": 0.028,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 11,
+      "antecedent_support": 0.044,
+      "antecedents": [
+        "LT_D",
+        "SBIN_U"
+      ],
+      "confidence": 0.6363636363636364,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 7,
+      "lift": 1.8286311389759666,
+      "support": 0.028,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 22,
+      "antecedent_support": 0.088,
+      "antecedents": [
+        "INFY_D",
+        "TCS_N"
+      ],
+      "confidence": 0.6363636363636364,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 14,
+      "lift": 1.6233766233766234,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 33,
+      "antecedent_support": 0.132,
+      "antecedents": [
+        "ICICIBANK_U",
+        "RELIANCE_N"
+      ],
+      "confidence": 0.6363636363636364,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 21,
+      "lift": 1.5597147950089127,
+      "support": 0.084,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 11,
+      "antecedent_support": 0.044,
+      "antecedents": [
+        "LT_D",
+        "SBIN_U"
+      ],
+      "confidence": 0.6363636363636364,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 7,
+      "lift": 1.5597147950089127,
+      "support": 0.028,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 11,
+      "antecedent_support": 0.044,
+      "antecedents": [
+        "INFY_N",
+        "ITC_U"
+      ],
+      "confidence": 0.6363636363636364,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 7,
+      "lift": 1.5445719329214476,
+      "support": 0.028,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 33,
+      "antecedent_support": 0.132,
+      "antecedents": [
+        "INFY_U",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.6363636363636364,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 21,
+      "lift": 1.5008576329331047,
+      "support": 0.084,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "RELIANCE_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.631578947368421,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 12,
+      "lift": 1.5329586101175268,
+      "support": 0.048,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "RELIANCE_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.631578947368421,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 12,
+      "lift": 1.4619883040935673,
+      "support": 0.048,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "HDFCBANK_D",
+        "MARUTI_N"
+      ],
+      "confidence": 0.6296296296296297,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 17,
+      "lift": 1.484975541579315,
+      "support": 0.068,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "INFY_U",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_SUNPHARMA_U",
+      "consequent_count": 72,
+      "consequent_support": 0.288,
+      "joint_count": 10,
+      "lift": 2.170138888888889,
+      "support": 0.04,
+      "target_label": "U",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "ICICIBANK_D",
+        "SBIN_U"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_RELIANCE_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 10,
+      "lift": 2.0559210526315788,
+      "support": 0.04,
+      "target_label": "U",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 24,
+      "antecedent_support": 0.096,
+      "antecedents": [
+        "HDFCBANK_N",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 15,
+      "lift": 1.644736842105263,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "INFY_N",
+        "MARUTI_N"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 10,
+      "lift": 1.594387755102041,
+      "support": 0.04,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "ICICIBANK_U",
+        "SBIN_D"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 10,
+      "lift": 1.5782828282828283,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 32,
+      "antecedent_support": 0.128,
+      "antecedents": [
+        "HDFCBANK_N",
+        "TCS_D"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 20,
+      "lift": 1.5318627450980393,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "SUNPHARMA_D",
+        "TCS_N"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 10,
+      "lift": 1.5318627450980393,
+      "support": 0.04,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 8,
+      "antecedent_support": 0.032,
+      "antecedents": [
+        "HDFCBANK_U",
+        "SBIN_D"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 5,
+      "lift": 1.5318627450980393,
+      "support": 0.02,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "LT_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 10,
+      "lift": 1.516990291262136,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "MARUTI_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 10,
+      "lift": 1.474056603773585,
+      "support": 0.04,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 8,
+      "antecedent_support": 0.032,
+      "antecedents": [
+        "HDFCBANK_U",
+        "SBIN_D"
+      ],
+      "confidence": 0.625,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 5,
+      "lift": 1.4467592592592593,
+      "support": 0.02,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "RELIANCE_U",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.6206896551724138,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 18,
+      "lift": 1.5833919774806475,
+      "support": 0.072,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "INFY_U",
+        "ITC_U"
+      ],
+      "confidence": 0.6206896551724138,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 18,
+      "lift": 1.4638906961613534,
+      "support": 0.072,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "MARUTI_N",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.6206896551724138,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 18,
+      "lift": 1.4638906961613534,
+      "support": 0.072,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 21,
+      "antecedent_support": 0.084,
+      "antecedents": [
+        "INFY_N",
+        "SBIN_N"
+      ],
+      "confidence": 0.6190476190476191,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 13,
+      "lift": 1.5792031098153547,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 21,
+      "antecedent_support": 0.084,
+      "antecedents": [
+        "HDFCBANK_N",
+        "TCS_N"
+      ],
+      "confidence": 0.6190476190476191,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 13,
+      "lift": 1.5172735760971054,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "ITC_N",
+        "LT_U"
+      ],
+      "confidence": 0.6153846153846154,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 16,
+      "lift": 1.7683465959328029,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 13,
+      "antecedent_support": 0.052,
+      "antecedents": [
+        "ICICIBANK_U",
+        "LT_D"
+      ],
+      "confidence": 0.6153846153846154,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 8,
+      "lift": 1.6194331983805668,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "SUNPHARMA_N",
+        "TCS_N"
+      ],
+      "confidence": 0.6153846153846154,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 16,
+      "lift": 1.5698587127158556,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 13,
+      "antecedent_support": 0.052,
+      "antecedents": [
+        "HDFCBANK_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.6153846153846154,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 8,
+      "lift": 1.554001554001554,
+      "support": 0.032,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "ICICIBANK_U",
+        "MARUTI_D"
+      ],
+      "confidence": 0.6153846153846154,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.5082956259426847,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 13,
+      "antecedent_support": 0.052,
+      "antecedents": [
+        "HDFCBANK_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.6153846153846154,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 8,
+      "lift": 1.4936519790888723,
+      "support": 0.032,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "ICICIBANK_D",
+        "MARUTI_N"
+      ],
+      "confidence": 0.6153846153846154,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 16,
+      "lift": 1.4513788098693758,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "LT_U",
+        "TCS_N"
+      ],
+      "confidence": 0.6111111111111112,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 11,
+      "lift": 1.5589569160997732,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "HDFCBANK_N",
+        "INFY_N"
+      ],
+      "confidence": 0.6111111111111112,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 11,
+      "lift": 1.4978213507625273,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "MARUTI_U",
+        "TCS_D"
+      ],
+      "confidence": 0.6111111111111112,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 11,
+      "lift": 1.4412997903563942,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "RELIANCE_D",
+        "TCS_N"
+      ],
+      "confidence": 0.6111111111111112,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 11,
+      "lift": 1.4146090534979423,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 23,
+      "antecedent_support": 0.092,
+      "antecedents": [
+        "INFY_D",
+        "ITC_U"
+      ],
+      "confidence": 0.6086956521739131,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 14,
+      "lift": 1.6018306636155606,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 23,
+      "antecedent_support": 0.092,
+      "antecedents": [
+        "INFY_N",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.6086956521739131,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 14,
+      "lift": 1.5527950310559007,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 23,
+      "antecedent_support": 0.092,
+      "antecedents": [
+        "ICICIBANK_N",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.6086956521739131,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 14,
+      "lift": 1.4774166314900803,
+      "support": 0.056,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 23,
+      "antecedent_support": 0.092,
+      "antecedents": [
+        "ICICIBANK_U",
+        "MARUTI_N"
+      ],
+      "confidence": 0.6086956521739131,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 14,
+      "lift": 1.4090177133655395,
+      "support": 0.056,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 28,
+      "antecedent_support": 0.112,
+      "antecedents": [
+        "HDFCBANK_U",
+        "ITC_N"
+      ],
+      "confidence": 0.6071428571428571,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 17,
+      "lift": 1.7446633825944171,
+      "support": 0.068,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 28,
+      "antecedent_support": 0.112,
+      "antecedents": [
+        "LT_U",
+        "RELIANCE_N"
+      ],
+      "confidence": 0.6071428571428571,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 17,
+      "lift": 1.4880952380952381,
+      "support": 0.068,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 28,
+      "antecedent_support": 0.112,
+      "antecedents": [
+        "HDFCBANK_N",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.6071428571428571,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 17,
+      "lift": 1.4736477115117892,
+      "support": 0.068,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 33,
+      "antecedent_support": 0.132,
+      "antecedents": [
+        "INFY_U",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.6060606060606061,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 20,
+      "lift": 1.429388221841052,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 33,
+      "antecedent_support": 0.132,
+      "antecedents": [
+        "SUNPHARMA_U",
+        "TCS_U"
+      ],
+      "confidence": 0.6060606060606061,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 20,
+      "lift": 1.429388221841052,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 10,
+      "antecedent_support": 0.04,
+      "antecedents": [
+        "LT_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_SUNPHARMA_U",
+      "consequent_count": 72,
+      "consequent_support": 0.288,
+      "joint_count": 6,
+      "lift": 2.0833333333333335,
+      "support": 0.024,
+      "target_label": "U",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 15,
+      "antecedent_support": 0.06,
+      "antecedents": [
+        "INFY_N",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_HDFCBANK_D",
+      "consequent_count": 75,
+      "consequent_support": 0.3,
+      "joint_count": 9,
+      "lift": 2.0,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 35,
+      "antecedent_support": 0.14,
+      "antecedents": [
+        "ITC_N",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 21,
+      "lift": 1.6666666666666667,
+      "support": 0.084,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "ICICIBANK_N",
+        "INFY_N"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 15,
+      "lift": 1.6666666666666667,
+      "support": 0.06,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 10,
+      "antecedent_support": 0.04,
+      "antecedents": [
+        "LT_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 6,
+      "lift": 1.5789473684210527,
+      "support": 0.024,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "HDFCBANK_N",
+        "SBIN_U"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 15,
+      "lift": 1.530612244897959,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 15,
+      "antecedent_support": 0.06,
+      "antecedents": [
+        "ITC_D",
+        "MARUTI_U"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 9,
+      "lift": 1.5151515151515151,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "HDFCBANK_U",
+        "RELIANCE_N"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 15,
+      "lift": 1.4705882352941178,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 35,
+      "antecedent_support": 0.14,
+      "antecedents": [
+        "ITC_N",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 21,
+      "lift": 1.4563106796116505,
+      "support": 0.084,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "HDFCBANK_N",
+        "SBIN_U"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 15,
+      "lift": 1.4150943396226414,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "HDFCBANK_U",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 15,
+      "lift": 1.4150943396226414,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "ITC_U",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 15,
+      "lift": 1.4150943396226414,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "HDFCBANK_D",
+        "INFY_U"
+      ],
+      "confidence": 0.6,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 12,
+      "lift": 1.4150943396226414,
+      "support": 0.048,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 32,
+      "antecedent_support": 0.128,
+      "antecedents": [
+        "HDFCBANK_U",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.59375,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 19,
+      "lift": 1.7061781609195403,
+      "support": 0.076,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 32,
+      "antecedent_support": 0.128,
+      "antecedents": [
+        "SBIN_U",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.59375,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 19,
+      "lift": 1.5146683673469388,
+      "support": 0.076,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 32,
+      "antecedent_support": 0.128,
+      "antecedents": [
+        "LT_N",
+        "MARUTI_D"
+      ],
+      "confidence": 0.59375,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 19,
+      "lift": 1.4552696078431373,
+      "support": 0.076,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "MARUTI_N",
+        "SBIN_U"
+      ],
+      "confidence": 0.5925925925925926,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 16,
+      "lift": 1.5117157974300832,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "HDFCBANK_N",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5925925925925926,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.4524328249818446,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 22,
+      "antecedent_support": 0.088,
+      "antecedents": [
+        "HDFCBANK_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5909090909090909,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 13,
+      "lift": 1.6980146290491118,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 22,
+      "antecedent_support": 0.088,
+      "antecedents": [
+        "MARUTI_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5909090909090909,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 13,
+      "lift": 1.6414141414141414,
+      "support": 0.052,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 22,
+      "antecedent_support": 0.088,
+      "antecedents": [
+        "INFY_N",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.5909090909090909,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 13,
+      "lift": 1.4921946740128558,
+      "support": 0.052,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 22,
+      "antecedent_support": 0.088,
+      "antecedents": [
+        "MARUTI_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5909090909090909,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 13,
+      "lift": 1.4483065953654188,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 22,
+      "antecedent_support": 0.088,
+      "antecedents": [
+        "INFY_N",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.5909090909090909,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 13,
+      "lift": 1.4342453662842012,
+      "support": 0.052,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 22,
+      "antecedent_support": 0.088,
+      "antecedents": [
+        "INFY_D",
+        "TCS_N"
+      ],
+      "confidence": 0.5909090909090909,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 13,
+      "lift": 1.3936535162950257,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 22,
+      "antecedent_support": 0.088,
+      "antecedents": [
+        "SUNPHARMA_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5909090909090909,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 13,
+      "lift": 1.3678451178451179,
+      "support": 0.052,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "ICICIBANK_D",
+        "LT_U"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_SBIN_D",
+      "consequent_count": 77,
+      "consequent_support": 0.308,
+      "joint_count": 10,
+      "lift": 1.9098548510313216,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "ICICIBANK_D",
+        "MARUTI_U"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_SBIN_D",
+      "consequent_count": 77,
+      "consequent_support": 0.308,
+      "joint_count": 10,
+      "lift": 1.9098548510313216,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "HDFCBANK_D",
+        "MARUTI_U"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 10,
+      "lift": 1.6339869281045751,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "RELIANCE_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 10,
+      "lift": 1.5006002400960383,
+      "support": 0.04,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 34,
+      "antecedent_support": 0.136,
+      "antecedents": [
+        "SBIN_U",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 20,
+      "lift": 1.441753171856978,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "ITC_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 10,
+      "lift": 1.441753171856978,
+      "support": 0.04,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 34,
+      "antecedent_support": 0.136,
+      "antecedents": [
+        "RELIANCE_D",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 20,
+      "lift": 1.4277555682467162,
+      "support": 0.08,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "HDFCBANK_U",
+        "INFY_N"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 10,
+      "lift": 1.4277555682467162,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 34,
+      "antecedent_support": 0.136,
+      "antecedents": [
+        "SBIN_U",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 20,
+      "lift": 1.3873473917869035,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "ICICIBANK_D",
+        "LT_U"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 10,
+      "lift": 1.3873473917869035,
+      "support": 0.04,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 17,
+      "antecedent_support": 0.068,
+      "antecedents": [
+        "LT_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.5882352941176471,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 10,
+      "lift": 1.3616557734204793,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "RELIANCE_U",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.5862068965517241,
+      "consequent": "NEXT_HDFCBANK_D",
+      "consequent_count": 75,
+      "consequent_support": 0.3,
+      "joint_count": 17,
+      "lift": 1.9540229885057472,
+      "support": 0.068,
+      "target_label": "D",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "ITC_N",
+        "SBIN_U"
+      ],
+      "confidence": 0.5862068965517241,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 17,
+      "lift": 1.4954257565095004,
+      "support": 0.068,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "INFY_U",
+        "SBIN_U"
+      ],
+      "confidence": 0.5862068965517241,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 17,
+      "lift": 1.3825634352635003,
+      "support": 0.068,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 36,
+      "antecedent_support": 0.144,
+      "antecedents": [
+        "SUNPHARMA_N",
+        "TCS_U"
+      ],
+      "confidence": 0.5833333333333334,
+      "consequent": "NEXT_SBIN_U",
+      "consequent_count": 78,
+      "consequent_support": 0.312,
+      "joint_count": 21,
+      "lift": 1.8696581196581197,
+      "support": 0.084,
+      "target_label": "U",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "ITC_U",
+        "MARUTI_D"
+      ],
+      "confidence": 0.5833333333333334,
+      "consequent": "NEXT_LT_N",
+      "consequent_count": 88,
+      "consequent_support": 0.352,
+      "joint_count": 7,
+      "lift": 1.6571969696969697,
+      "support": 0.028,
+      "target_label": "N",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 24,
+      "antecedent_support": 0.096,
+      "antecedents": [
+        "MARUTI_N",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5833333333333334,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 14,
+      "lift": 1.5350877192982457,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 24,
+      "antecedent_support": 0.096,
+      "antecedents": [
+        "MARUTI_N",
+        "TCS_N"
+      ],
+      "confidence": 0.5833333333333334,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 14,
+      "lift": 1.4880952380952381,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "ITC_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.5833333333333334,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 7,
+      "lift": 1.4880952380952381,
+      "support": 0.028,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "LT_U",
+        "MARUTI_D"
+      ],
+      "confidence": 0.5833333333333334,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 7,
+      "lift": 1.4297385620915033,
+      "support": 0.028,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 24,
+      "antecedent_support": 0.096,
+      "antecedents": [
+        "MARUTI_N",
+        "TCS_N"
+      ],
+      "confidence": 0.5833333333333334,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 14,
+      "lift": 1.3757861635220126,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "ITC_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.5833333333333334,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 7,
+      "lift": 1.3757861635220126,
+      "support": 0.028,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 12,
+      "antecedent_support": 0.048,
+      "antecedents": [
+        "LT_U",
+        "MARUTI_D"
+      ],
+      "confidence": 0.5833333333333334,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 7,
+      "lift": 1.3503086419753085,
+      "support": 0.028,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 31,
+      "antecedent_support": 0.124,
+      "antecedents": [
+        "ICICIBANK_D",
+        "SBIN_N"
+      ],
+      "confidence": 0.5806451612903226,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 18,
+      "lift": 1.4093329157532102,
+      "support": 0.072,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "SUNPHARMA_D",
+        "TCS_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_SUNPHARMA_U",
+      "consequent_count": 72,
+      "consequent_support": 0.288,
+      "joint_count": 11,
+      "lift": 2.010233918128655,
+      "support": 0.044,
+      "target_label": "U",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 38,
+      "antecedent_support": 0.152,
+      "antecedents": [
+        "HDFCBANK_U",
+        "ICICIBANK_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 22,
+      "lift": 1.663641863278887,
+      "support": 0.088,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "INFY_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_LT_N",
+      "consequent_count": 88,
+      "consequent_support": 0.352,
+      "joint_count": 11,
+      "lift": 1.644736842105263,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "HDFCBANK_D",
+        "ICICIBANK_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 11,
+      "lift": 1.608187134502924,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "INFY_N",
+        "MARUTI_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 11,
+      "lift": 1.608187134502924,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "RELIANCE_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 11,
+      "lift": 1.608187134502924,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "HDFCBANK_N",
+        "ITC_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 11,
+      "lift": 1.5235457063711912,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "RELIANCE_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 11,
+      "lift": 1.5235457063711912,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "SUNPHARMA_D",
+        "TCS_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 11,
+      "lift": 1.5235457063711912,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "MARUTI_N",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 11,
+      "lift": 1.476906552094522,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "RELIANCE_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 11,
+      "lift": 1.476906552094522,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "RELIANCE_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 11,
+      "lift": 1.4619883040935673,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "HDFCBANK_N",
+        "ITC_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 11,
+      "lift": 1.4189886480908154,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "MARUTI_N",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 11,
+      "lift": 1.4189886480908154,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 38,
+      "antecedent_support": 0.152,
+      "antecedents": [
+        "LT_U",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 22,
+      "lift": 1.365441906653426,
+      "support": 0.088,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "INFY_U",
+        "ITC_D"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 11,
+      "lift": 1.3401559454191032,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 19,
+      "antecedent_support": 0.076,
+      "antecedents": [
+        "INFY_U",
+        "LT_D"
+      ],
+      "confidence": 0.5789473684210527,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 11,
+      "lift": 1.3401559454191032,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "HDFCBANK_N",
+        "MARUTI_D"
+      ],
+      "confidence": 0.5769230769230769,
+      "consequent": "NEXT_SUNPHARMA_D",
+      "consequent_count": 80,
+      "consequent_support": 0.32,
+      "joint_count": 15,
+      "lift": 1.8028846153846154,
+      "support": 0.06,
+      "target_label": "D",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "ICICIBANK_U",
+        "MARUTI_D"
+      ],
+      "confidence": 0.5769230769230769,
+      "consequent": "NEXT_LT_N",
+      "consequent_count": 88,
+      "consequent_support": 0.352,
+      "joint_count": 15,
+      "lift": 1.638986013986014,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "INFY_D",
+        "MARUTI_U"
+      ],
+      "confidence": 0.5769230769230769,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 15,
+      "lift": 1.4717425431711146,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "INFY_N",
+        "ITC_D"
+      ],
+      "confidence": 0.5769230769230769,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 15,
+      "lift": 1.456876456876457,
+      "support": 0.06,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "HDFCBANK_N",
+        "ICICIBANK_U"
+      ],
+      "confidence": 0.5769230769230769,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 15,
+      "lift": 1.414027149321267,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "ICICIBANK_N",
+        "MARUTI_D"
+      ],
+      "confidence": 0.5769230769230769,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 15,
+      "lift": 1.4002987303958179,
+      "support": 0.06,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "MARUTI_U",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5769230769230769,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 15,
+      "lift": 1.36066763425254,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 26,
+      "antecedent_support": 0.104,
+      "antecedents": [
+        "HDFCBANK_N",
+        "ICICIBANK_U"
+      ],
+      "confidence": 0.5769230769230769,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 15,
+      "lift": 1.3354700854700854,
+      "support": 0.06,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 33,
+      "antecedent_support": 0.132,
+      "antecedents": [
+        "HDFCBANK_D",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.5757575757575758,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 19,
+      "lift": 1.4539332721150904,
+      "support": 0.076,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "RELIANCE_U",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_LT_U",
+      "consequent_count": 78,
+      "consequent_support": 0.312,
+      "joint_count": 8,
+      "lift": 1.8315018315018314,
+      "support": 0.032,
+      "target_label": "U",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ICICIBANK_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_MARUTI_N",
+      "consequent_count": 79,
+      "consequent_support": 0.316,
+      "joint_count": 8,
+      "lift": 1.8083182640144666,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ICICIBANK_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 8,
+      "lift": 1.6420361247947455,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "RELIANCE_U",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 8,
+      "lift": 1.6420361247947455,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ITC_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_LT_N",
+      "consequent_count": 88,
+      "consequent_support": 0.352,
+      "joint_count": 8,
+      "lift": 1.6233766233766234,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 21,
+      "antecedent_support": 0.084,
+      "antecedents": [
+        "SBIN_N",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 12,
+      "lift": 1.5037593984962405,
+      "support": 0.048,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 35,
+      "antecedent_support": 0.14,
+      "antecedents": [
+        "MARUTI_U",
+        "SBIN_U"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 20,
+      "lift": 1.4577259475218658,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ICICIBANK_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 8,
+      "lift": 1.4577259475218658,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 21,
+      "antecedent_support": 0.084,
+      "antecedents": [
+        "INFY_N",
+        "LT_D"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 12,
+      "lift": 1.443001443001443,
+      "support": 0.048,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 28,
+      "antecedent_support": 0.112,
+      "antecedents": [
+        "INFY_U",
+        "MARUTI_D"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.4005602240896358,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 28,
+      "antecedent_support": 0.112,
+      "antecedents": [
+        "ITC_D",
+        "SBIN_N"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.4005602240896358,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 21,
+      "antecedent_support": 0.084,
+      "antecedents": [
+        "HDFCBANK_N",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 12,
+      "lift": 1.4005602240896358,
+      "support": 0.048,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 21,
+      "antecedent_support": 0.084,
+      "antecedents": [
+        "ITC_U",
+        "LT_N"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 12,
+      "lift": 1.4005602240896358,
+      "support": 0.048,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "ICICIBANK_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 8,
+      "lift": 1.4005602240896358,
+      "support": 0.032,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 28,
+      "antecedent_support": 0.112,
+      "antecedents": [
+        "HDFCBANK_U",
+        "ITC_N"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 16,
+      "lift": 1.3869625520110958,
+      "support": 0.064,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 21,
+      "antecedent_support": 0.084,
+      "antecedents": [
+        "HDFCBANK_N",
+        "TCS_N"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 12,
+      "lift": 1.3869625520110958,
+      "support": 0.048,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 14,
+      "antecedent_support": 0.056,
+      "antecedents": [
+        "HDFCBANK_D",
+        "LT_U"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 8,
+      "lift": 1.3869625520110958,
+      "support": 0.032,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 21,
+      "antecedent_support": 0.084,
+      "antecedents": [
+        "SBIN_N",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 12,
+      "lift": 1.3477088948787062,
+      "support": 0.048,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 42,
+      "antecedent_support": 0.168,
+      "antecedents": [
+        "INFY_D",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 24,
+      "lift": 1.3227513227513228,
+      "support": 0.096,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 28,
+      "antecedent_support": 0.112,
+      "antecedents": [
+        "INFY_D",
+        "LT_U"
+      ],
+      "confidence": 0.5714285714285714,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 16,
+      "lift": 1.3227513227513228,
+      "support": 0.064,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 30,
+      "antecedent_support": 0.12,
+      "antecedents": [
+        "RELIANCE_U",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5666666666666667,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 17,
+      "lift": 1.3888888888888888,
+      "support": 0.068,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 30,
+      "antecedent_support": 0.12,
+      "antecedents": [
+        "RELIANCE_D",
+        "SBIN_N"
+      ],
+      "confidence": 0.5666666666666667,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 17,
+      "lift": 1.3117283950617284,
+      "support": 0.068,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 23,
+      "antecedent_support": 0.092,
+      "antecedents": [
+        "HDFCBANK_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5652173913043478,
+      "consequent": "NEXT_HDFCBANK_U",
+      "consequent_count": 73,
+      "consequent_support": 0.292,
+      "joint_count": 13,
+      "lift": 1.9356759976176297,
+      "support": 0.052,
+      "target_label": "U",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 23,
+      "antecedent_support": 0.092,
+      "antecedents": [
+        "INFY_D",
+        "ITC_U"
+      ],
+      "confidence": 0.5652173913043478,
+      "consequent": "NEXT_RELIANCE_D",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 13,
+      "lift": 1.6241879060469766,
+      "support": 0.052,
+      "target_label": "D",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 23,
+      "antecedent_support": 0.092,
+      "antecedents": [
+        "INFY_N",
+        "TCS_N"
+      ],
+      "confidence": 0.5652173913043478,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 13,
+      "lift": 1.570048309178744,
+      "support": 0.052,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 23,
+      "antecedent_support": 0.092,
+      "antecedents": [
+        "HDFCBANK_N",
+        "MARUTI_U"
+      ],
+      "confidence": 0.5652173913043478,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 13,
+      "lift": 1.4874141876430207,
+      "support": 0.052,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 23,
+      "antecedent_support": 0.092,
+      "antecedents": [
+        "HDFCBANK_D",
+        "INFY_N"
+      ],
+      "confidence": 0.5652173913043478,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 13,
+      "lift": 1.427316644707949,
+      "support": 0.052,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 23,
+      "antecedent_support": 0.092,
+      "antecedents": [
+        "ICICIBANK_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.5652173913043478,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 13,
+      "lift": 1.427316644707949,
+      "support": 0.052,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "INFY_U",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_ITC_U",
+      "consequent_count": 54,
+      "consequent_support": 0.216,
+      "joint_count": 9,
+      "lift": 2.6041666666666665,
+      "support": 0.036,
+      "target_label": "U",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "MARUTI_D",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_SUNPHARMA_U",
+      "consequent_count": 72,
+      "consequent_support": 0.288,
+      "joint_count": 9,
+      "lift": 1.953125,
+      "support": 0.036,
+      "target_label": "U",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "MARUTI_U",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_ICICIBANK_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 9,
+      "lift": 1.850328947368421,
+      "support": 0.036,
+      "target_label": "U",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "ICICIBANK_U",
+        "SBIN_D"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 9,
+      "lift": 1.5625,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "HDFCBANK_U",
+        "ITC_D"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 9,
+      "lift": 1.480263157894737,
+      "support": 0.036,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "ICICIBANK_U",
+        "SBIN_D"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 9,
+      "lift": 1.480263157894737,
+      "support": 0.036,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 32,
+      "antecedent_support": 0.128,
+      "antecedents": [
+        "HDFCBANK_U",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 18,
+      "lift": 1.4349489795918366,
+      "support": 0.072,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "ITC_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 9,
+      "lift": 1.4204545454545454,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 32,
+      "antecedent_support": 0.128,
+      "antecedents": [
+        "MARUTI_D",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 18,
+      "lift": 1.3786764705882353,
+      "support": 0.072,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "ICICIBANK_D",
+        "SBIN_U"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 9,
+      "lift": 1.3786764705882353,
+      "support": 0.036,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "ITC_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 9,
+      "lift": 1.3786764705882353,
+      "support": 0.036,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "MARUTI_U",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 9,
+      "lift": 1.3786764705882353,
+      "support": 0.036,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 32,
+      "antecedent_support": 0.128,
+      "antecedents": [
+        "ICICIBANK_N",
+        "INFY_D"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 18,
+      "lift": 1.3266509433962264,
+      "support": 0.072,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "ITC_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 9,
+      "lift": 1.3020833333333333,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 16,
+      "antecedent_support": 0.064,
+      "antecedents": [
+        "LT_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5625,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 9,
+      "lift": 1.3020833333333333,
+      "support": 0.036,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "LT_U",
+        "TCS_D"
+      ],
+      "confidence": 0.56,
+      "consequent": "NEXT_LT_D",
+      "consequent_count": 84,
+      "consequent_support": 0.336,
+      "joint_count": 14,
+      "lift": 1.6666666666666667,
+      "support": 0.056,
+      "target_label": "D",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "HDFCBANK_U",
+        "RELIANCE_N"
+      ],
+      "confidence": 0.56,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 14,
+      "lift": 1.6091954022988506,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "SBIN_N",
+        "TCS_N"
+      ],
+      "confidence": 0.56,
+      "consequent": "NEXT_LT_N",
+      "consequent_count": 88,
+      "consequent_support": 0.352,
+      "joint_count": 14,
+      "lift": 1.5909090909090908,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "HDFCBANK_N",
+        "SBIN_U"
+      ],
+      "confidence": 0.56,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 14,
+      "lift": 1.4736842105263157,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "LT_N",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.56,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 14,
+      "lift": 1.4285714285714286,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "SBIN_N",
+        "TCS_N"
+      ],
+      "confidence": 0.56,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 14,
+      "lift": 1.3725490196078431,
+      "support": 0.056,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 25,
+      "antecedent_support": 0.1,
+      "antecedents": [
+        "LT_U",
+        "TCS_D"
+      ],
+      "confidence": 0.56,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 14,
+      "lift": 1.2962962962962963,
+      "support": 0.056,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 34,
+      "antecedent_support": 0.136,
+      "antecedents": [
+        "ICICIBANK_U",
+        "INFY_U"
+      ],
+      "confidence": 0.5588235294117647,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 19,
+      "lift": 1.369665513264129,
+      "support": 0.076,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 34,
+      "antecedent_support": 0.136,
+      "antecedents": [
+        "ITC_N",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5588235294117647,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 19,
+      "lift": 1.3563677898343804,
+      "support": 0.076,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 34,
+      "antecedent_support": 0.136,
+      "antecedents": [
+        "ITC_N",
+        "MARUTI_N"
+      ],
+      "confidence": 0.5588235294117647,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 19,
+      "lift": 1.3179800221975582,
+      "support": 0.076,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 9,
+      "antecedent_support": 0.036,
+      "antecedents": [
+        "INFY_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_SUNPHARMA_U",
+      "consequent_count": 72,
+      "consequent_support": 0.288,
+      "joint_count": 5,
+      "lift": 1.9290123456790123,
+      "support": 0.02,
+      "target_label": "U",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "HDFCBANK_N",
+        "ITC_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_RELIANCE_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 15,
+      "lift": 1.827485380116959,
+      "support": 0.06,
+      "target_label": "U",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "HDFCBANK_D",
+        "SBIN_U"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_RELIANCE_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 10,
+      "lift": 1.827485380116959,
+      "support": 0.04,
+      "target_label": "U",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "HDFCBANK_D",
+        "SBIN_U"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_TCS_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 10,
+      "lift": 1.827485380116959,
+      "support": 0.04,
+      "target_label": "U",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "RELIANCE_D",
+        "SBIN_U"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_RELIANCE_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 10,
+      "lift": 1.827485380116959,
+      "support": 0.04,
+      "target_label": "U",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 9,
+      "antecedent_support": 0.036,
+      "antecedents": [
+        "INFY_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_RELIANCE_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 5,
+      "lift": 1.827485380116959,
+      "support": 0.02,
+      "target_label": "U",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 9,
+      "antecedent_support": 0.036,
+      "antecedents": [
+        "LT_D",
+        "MARUTI_U"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_ICICIBANK_U",
+      "consequent_count": 76,
+      "consequent_support": 0.304,
+      "joint_count": 5,
+      "lift": 1.827485380116959,
+      "support": 0.02,
+      "target_label": "U",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "MARUTI_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_SBIN_D",
+      "consequent_count": 77,
+      "consequent_support": 0.308,
+      "joint_count": 10,
+      "lift": 1.8037518037518037,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "LT_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_RELIANCE_N",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 10,
+      "lift": 1.5964240102171137,
+      "support": 0.04,
+      "target_label": "N",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "MARUTI_D",
+        "TCS_N"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_RELIANCE_D",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 10,
+      "lift": 1.5964240102171137,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "MARUTI_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_RELIANCE_D",
+      "consequent_count": 87,
+      "consequent_support": 0.348,
+      "joint_count": 10,
+      "lift": 1.5964240102171137,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "RELIANCE.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "LT_N",
+        "MARUTI_U"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 15,
+      "lift": 1.5432098765432098,
+      "support": 0.06,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "RELIANCE_D",
+        "TCS_N"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_SBIN_N",
+      "consequent_count": 95,
+      "consequent_support": 0.38,
+      "joint_count": 10,
+      "lift": 1.4619883040935673,
+      "support": 0.04,
+      "target_label": "N",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "ITC_U",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 15,
+      "lift": 1.417233560090703,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "LT_N",
+        "TCS_N"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 15,
+      "lift": 1.417233560090703,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 36,
+      "antecedent_support": 0.144,
+      "antecedents": [
+        "SUNPHARMA_D",
+        "TCS_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 20,
+      "lift": 1.4029180695847363,
+      "support": 0.08,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "HDFCBANK_D",
+        "SBIN_U"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 10,
+      "lift": 1.4029180695847363,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "MARUTI_U",
+        "RELIANCE_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 10,
+      "lift": 1.4029180695847363,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "MARUTI_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 10,
+      "lift": 1.4029180695847363,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "RELIANCE_D",
+        "SBIN_U"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 10,
+      "lift": 1.4029180695847363,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 36,
+      "antecedent_support": 0.144,
+      "antecedents": [
+        "HDFCBANK_N",
+        "MARUTI_N"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 20,
+      "lift": 1.3616557734204793,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 36,
+      "antecedent_support": 0.144,
+      "antecedents": [
+        "MARUTI_D",
+        "RELIANCE_N"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 20,
+      "lift": 1.3616557734204793,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "HDFCBANK_N",
+        "LT_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 15,
+      "lift": 1.3616557734204793,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "ICICIBANK_N",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 15,
+      "lift": 1.3616557734204793,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "HDFCBANK_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 10,
+      "lift": 1.3616557734204793,
+      "support": 0.04,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 9,
+      "antecedent_support": 0.036,
+      "antecedents": [
+        "INFY_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 5,
+      "lift": 1.3616557734204793,
+      "support": 0.02,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 9,
+      "antecedent_support": 0.036,
+      "antecedents": [
+        "LT_D",
+        "MARUTI_U"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 5,
+      "lift": 1.3616557734204793,
+      "support": 0.02,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 36,
+      "antecedent_support": 0.144,
+      "antecedents": [
+        "ITC_N",
+        "MARUTI_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 20,
+      "lift": 1.348435814455232,
+      "support": 0.08,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 36,
+      "antecedent_support": 0.144,
+      "antecedents": [
+        "HDFCBANK_U",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 20,
+      "lift": 1.310272536687631,
+      "support": 0.08,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "INFY_U",
+        "MARUTI_N"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 15,
+      "lift": 1.310272536687631,
+      "support": 0.06,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 27,
+      "antecedent_support": 0.108,
+      "antecedents": [
+        "ITC_U",
+        "SUNPHARMA_N"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 15,
+      "lift": 1.286008230452675,
+      "support": 0.06,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "LT_U",
+        "TCS_N"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 10,
+      "lift": 1.286008230452675,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 18,
+      "antecedent_support": 0.072,
+      "antecedents": [
+        "MARUTI_U",
+        "TCS_D"
+      ],
+      "confidence": 0.5555555555555556,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 10,
+      "lift": 1.286008230452675,
+      "support": 0.04,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 38,
+      "antecedent_support": 0.152,
+      "antecedents": [
+        "INFY_U",
+        "LT_U"
+      ],
+      "confidence": 0.5526315789473685,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 21,
+      "lift": 1.3033763654419066,
+      "support": 0.084,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 38,
+      "antecedent_support": 0.152,
+      "antecedents": [
+        "MARUTI_U",
+        "RELIANCE_U"
+      ],
+      "confidence": 0.5526315789473685,
+      "consequent": "NEXT_ITC_N",
+      "consequent_count": 106,
+      "consequent_support": 0.424,
+      "joint_count": 21,
+      "lift": 1.3033763654419066,
+      "support": 0.084,
+      "target_label": "N",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 38,
+      "antecedent_support": 0.152,
+      "antecedents": [
+        "HDFCBANK_N",
+        "SBIN_N"
+      ],
+      "confidence": 0.5526315789473685,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 21,
+      "lift": 1.2792397660818713,
+      "support": 0.084,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "HDFCBANK_N",
+        "LT_N"
+      ],
+      "confidence": 0.5517241379310345,
+      "consequent": "NEXT_SUNPHARMA_D",
+      "consequent_count": 80,
+      "consequent_support": 0.32,
+      "joint_count": 16,
+      "lift": 1.7241379310344827,
+      "support": 0.064,
+      "target_label": "D",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "LT_N",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.5517241379310345,
+      "consequent": "NEXT_SUNPHARMA_D",
+      "consequent_count": 80,
+      "consequent_support": 0.32,
+      "joint_count": 16,
+      "lift": 1.7241379310344827,
+      "support": 0.064,
+      "target_label": "D",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "HDFCBANK_N",
+        "LT_U"
+      ],
+      "confidence": 0.5517241379310345,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 16,
+      "lift": 1.4074595355383532,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "RELIANCE_N",
+        "SBIN_U"
+      ],
+      "confidence": 0.5517241379310345,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 16,
+      "lift": 1.4074595355383532,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "HDFCBANK_N",
+        "LT_U"
+      ],
+      "confidence": 0.5517241379310345,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.352265043948614,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "INFY_U",
+        "ITC_U"
+      ],
+      "confidence": 0.5517241379310345,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.352265043948614,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "INFY_U",
+        "ITC_U"
+      ],
+      "confidence": 0.5517241379310345,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.352265043948614,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "INFY_U",
+        "SBIN_U"
+      ],
+      "confidence": 0.5517241379310345,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.352265043948614,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "RELIANCE_N",
+        "SBIN_U"
+      ],
+      "confidence": 0.5517241379310345,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 16,
+      "lift": 1.352265043948614,
+      "support": 0.064,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 29,
+      "antecedent_support": 0.116,
+      "antecedents": [
+        "HDFCBANK_N",
+        "LT_U"
+      ],
+      "confidence": 0.5517241379310345,
+      "consequent": "NEXT_INFY_D",
+      "consequent_count": 108,
+      "consequent_support": 0.432,
+      "joint_count": 16,
+      "lift": 1.277139208173691,
+      "support": 0.064,
+      "target_label": "D",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "INFY_N",
+        "TCS_D"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_INFY_U",
+      "consequent_count": 71,
+      "consequent_support": 0.284,
+      "joint_count": 11,
+      "lift": 1.9366197183098592,
+      "support": 0.044,
+      "target_label": "U",
+      "target_ticker": "INFY.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "SBIN_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_HDFCBANK_U",
+      "consequent_count": 73,
+      "consequent_support": 0.292,
+      "joint_count": 11,
+      "lift": 1.8835616438356164,
+      "support": 0.044,
+      "target_label": "U",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "RELIANCE_D",
+        "TCS_U"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_SBIN_D",
+      "consequent_count": 77,
+      "consequent_support": 0.308,
+      "joint_count": 11,
+      "lift": 1.7857142857142858,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "SBIN.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "INFY_N",
+        "TCS_D"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_LT_D",
+      "consequent_count": 84,
+      "consequent_support": 0.336,
+      "joint_count": 11,
+      "lift": 1.6369047619047619,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "SBIN_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_LT_D",
+      "consequent_count": 84,
+      "consequent_support": 0.336,
+      "joint_count": 11,
+      "lift": 1.6369047619047619,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "SUNPHARMA_U",
+        "TCS_D"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_LT_D",
+      "consequent_count": 84,
+      "consequent_support": 0.336,
+      "joint_count": 11,
+      "lift": 1.6369047619047619,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "LT.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "SBIN_D",
+        "SUNPHARMA_U"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_ITC_D",
+      "consequent_count": 90,
+      "consequent_support": 0.36,
+      "joint_count": 11,
+      "lift": 1.5277777777777777,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "ITC.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "INFY_N",
+        "LT_N"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_SUNPHARMA_N",
+      "consequent_count": 98,
+      "consequent_support": 0.392,
+      "joint_count": 11,
+      "lift": 1.403061224489796,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "SUNPHARMA.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "RELIANCE_D",
+        "TCS_U"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_MARUTI_D",
+      "consequent_count": 99,
+      "consequent_support": 0.396,
+      "joint_count": 11,
+      "lift": 1.3888888888888888,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "MARUTI.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "HDFCBANK_U",
+        "MARUTI_D"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 11,
+      "lift": 1.3480392156862746,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "INFY_N",
+        "TCS_D"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 11,
+      "lift": 1.3480392156862746,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "ITC_U",
+        "MARUTI_N"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_ICICIBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 11,
+      "lift": 1.3480392156862746,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "ICICIBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "LT_D",
+        "SBIN_N"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 11,
+      "lift": 1.3480392156862746,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "LT_N",
+        "SUNPHARMA_D"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_HDFCBANK_N",
+      "consequent_count": 102,
+      "consequent_support": 0.408,
+      "joint_count": 11,
+      "lift": 1.3480392156862746,
+      "support": 0.044,
+      "target_label": "N",
+      "target_ticker": "HDFCBANK.NS",
+      "transaction_count": 250
+    },
+    {
+      "antecedent_count": 20,
+      "antecedent_support": 0.08,
+      "antecedents": [
+        "LT_D",
+        "SBIN_N"
+      ],
+      "confidence": 0.55,
+      "consequent": "NEXT_TCS_D",
+      "consequent_count": 103,
+      "consequent_support": 0.412,
+      "joint_count": 11,
+      "lift": 1.3349514563106797,
+      "support": 0.044,
+      "target_label": "D",
+      "target_ticker": "TCS.NS",
+      "transaction_count": 250
+    }
+  ],
+  "source_sha256": "5286eeaa261ed3abdae66fc105971a2dc78c0e5d134dd761f2bd6fbbe70f0c34",
+  "stocks": [
+    "RELIANCE.NS",
+    "TCS.NS",
+    "INFY.NS",
+    "HDFCBANK.NS",
+    "ICICIBANK.NS",
+    "SBIN.NS",
+    "ITC.NS",
+    "LT.NS",
+    "SUNPHARMA.NS",
+    "MARUTI.NS"
+  ],
+  "theta": 0.005
+}

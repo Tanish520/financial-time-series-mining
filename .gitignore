@@ -10,3 +10,5 @@ Project Information/
 data/raw/
 data/processed/
 data/results/
+tmp/
+output/*.zip
