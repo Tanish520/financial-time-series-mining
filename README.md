@@ -4,11 +4,11 @@ CS G520 Advanced Data Mining, BITS Pilani Hyderabad. Team: Tanish Kumar Gupta an
 
 The project investigates adaptive fitting-window selection, automatic association-rule thresholds and trading-cost-aware validation. It uses daily stock movements to mine interpretable rules for the following session. It does not claim to solve market prediction or concept drift.
 
-## Current checkpoint: Day 1, Step 4
+## Current checkpoint: Day 1, Step 5
 
-Implemented: the frozen data snapshot, causal labels, guarded Apriori, features-only frozen-rule matching, finite-capital execution, cost-aware metrics and an offline fixed chronological holdout. The fixed configuration retains zero rules and remains in cash during the first holdout. Walk-forward tuning and Streamlit pages are subsequent checkpoints; this single holdout is an engineering check, not the final research evaluation.
+Implemented: the frozen data snapshot, causal labels, guarded Apriori, features-only matching, finite-capital execution, cost-aware holdout and a five-view Streamlit preview over saved results. The fixed configuration retains zero rules and remains in cash during the first holdout. Walk-forward tuning is next; this single holdout is an engineering check, not the final research evaluation.
 
-The approved [design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md) explains the research protocol. The [current implementation checklist](docs/superpowers/plans/2026-11-18-day1-backtest.md) covers matching and backtesting. Earlier checklists record [mining](docs/superpowers/plans/2026-11-18-day1-mining.md), [labels](docs/superpowers/plans/2026-11-18-day1-labels.md) and the [data snapshot](docs/superpowers/plans/2026-11-18-day1-data-snapshot.md).
+The approved [design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md) explains the research protocol. The [current checklist](docs/superpowers/plans/2026-11-18-day1-streamlit.md) covers the app. Earlier checklists record [backtesting](docs/superpowers/plans/2026-11-18-day1-backtest.md), [mining](docs/superpowers/plans/2026-11-18-day1-mining.md), [labels](docs/superpowers/plans/2026-11-18-day1-labels.md) and the [data snapshot](docs/superpowers/plans/2026-11-18-day1-data-snapshot.md).
 
 ## Setup
 
@@ -21,7 +21,55 @@ python3.13 -m venv .venv
 
 On the project owner's Mac, the Python executable is /opt/homebrew/bin/python3.13. On Windows, use .venv\Scripts\python.exe in place of .venv/bin/python.
 
-requirements.txt pins the currently installed data, mining and testing packages, including transitive dependencies. mlxtend 0.25.0 was installed with the preceding pins as constraints; previous package versions were preserved. App dependencies will be added at that checkpoint.
+requirements.txt pins the installed data, mining, Streamlit and testing packages, including transitive dependencies. mlxtend 0.25.0 and Streamlit 1.67.0 were installed using the preceding pins as constraints; previous package versions were preserved.
+
+## Open the local app
+
+The preview is running on this workstation at **http://127.0.0.1:8501**. To start it after it stops, run from the repository root:
+
+```bash
+.venv/bin/python -m streamlit run app/streamlit_app.py --server.address 127.0.0.1 --server.port 8501
+```
+
+This is a local preview, not a published app. Binding to loopback keeps it on this workstation; testing a physical phone will use the later hosted deployment. The current layout uses centered, single-column native Streamlit controls.
+
+| View | Current behavior |
+| --- | --- |
+| Rules Explorer | Project summary, fixed-fit dates/thresholds, target/direction/confidence display filters, and the genuine zero-rule state |
+| Tuning & Drift | Actual fixed settings with an explicit notice that walk-forward selection has not run; no invented winner frequencies |
+| Backtest | Portfolio or stock view, all three cost scenarios, saved equity curves, seven metrics and cost/fill assumptions |
+| Asymmetry | Actual zero U/D forecast counts; precision/lift remain undefined and no performance chart is invented |
+| Latest Signals | Explicitly not enabled; the displayed experiment is historical, with daily refresh/cached fallback deferred |
+
+The Backtest cost selector changes the selected saved accounting scenario, not the model. For example, at 0.10% the holding basket shows -1.37%, while at 0.50% it shows -1.77%; the cash strategy stays at 0.00%. NIFTY remains an uncosted price-index reference. Undefined values display N/A; positive infinite profit factor displays the infinity symbol.
+
+> **Key Insight:** A display filter or cost selector must not secretly retune a model. The app presents the verified saved experiment and clearly identifies work that has not run yet.
+
+### App data and fresh checkouts
+
+The app reads the versioned eight-file bundle in app/artifacts/day1_holdout, approximately 90 KB. It contains only the derived holdout files and their original manifest, copied byte for byte. A fresh checkout can display these results without downloading raw prices or importing the research/provider modules. The app verifies file checksums on each rerun and parses the verified bytes; missing or corrupt results produce an explicit error instead of fallback data.
+
+The research caches under data/ stay local and ignored by Git. Updating the display bundle is an explicit operation, separate from running the app:
+
+```bash
+.venv/bin/python -m app.results --source data/results/day1_holdout_fixed_2022_12_30 --output app/artifacts/another_holdout
+```
+
+The packaging command verifies the source and refuses to overwrite an existing bundle. To preview a different compatible fixed-holdout bundle, set ADM_RESULTS_DIR to its directory when launching Streamlit. Walk-forward bundle support will be added with that evaluation stage.
+
+### App checks and verification limit
+
+```bash
+.venv/bin/python -m pytest tests/test_app.py -q -W error
+.venv/bin/python -m pytest -q -W error
+.venv/bin/python -m pip check
+```
+
+Observed: 22 app tests pass, the full suite has 142 passing tests, and dependency checks pass. AppTest exercises navigation, filters, scope/cost selection, formatting, empty/pending states and missing-result handling. The app tests also pass with OS networking denied; research and provider imports are blocked in a separate check. Both the local root and health endpoint returned HTTP 200. A read-only review found no material issues and confirmed all 12 scope/cost combinations select matching saved curves and metrics.
+
+Visual desktop/phone QA remains **unverified** in this session: no browser provider was available, and native Chrome/Brave access returned cgWindowNotFound. No screenshot or viewport success is claimed. The local URL is available for manual review; confirm narrow-screen layout before final deployment. The preview server remains available during the ongoing project and can be stopped from its terminal with Ctrl+C.
+
+Streamlit references: [AppTest](https://docs.streamlit.io/develop/concepts/app-testing/get-started), [dataframe API](https://docs.streamlit.io/develop/api-reference/data/st.dataframe).
 
 ## Check the existing snapshot without downloading
 
@@ -194,7 +242,7 @@ This is a valid empty result. Do not lower thresholds after inspecting the resul
 
 One transaction represents one complete day of all three stocks' feature items and next-session target items. Consequently the support denominator is 500 days, not 1,500 stock-day rows. The fitting window is selected by outcome availability before encoding. The encoder sees only this training subset. Apriori's maximum itemset length is three, including the consequent. Final rules must contain one or two observed feature antecedents, exactly one NEXT_ consequent, and lift strictly above one. Integer counts enforce the lift comparison without mistaking floating-point round-off for positive lift.
 
-Final metrics are reconstructed from integer transaction counts before confidence filtering and stricter reuse. A regression covers 15 matching outcomes in 25 antecedent occurrences: exactly 60% must pass an inclusive 60% cutoff, even if intermediate library arithmetic reports 59.99999999999999%. Review identified this boundary issue; both the direct-mining and stricter-reuse paths are now checked. The full current suite has 120 passing tests with warnings treated as errors.
+Final metrics are reconstructed from integer transaction counts before confidence filtering and stricter reuse. A regression covers 15 matching outcomes in 25 antecedent occurrences: exactly 60% must pass an inclusive 60% cutoff, even if intermediate library arithmetic reports 59.99999999999999%. Review identified this boundary issue; both the direct-mining and stricter-reuse paths are checked with warnings treated as errors.
 
 To save a new training-artifact directory once:
 
@@ -307,6 +355,6 @@ The final command passed with networking denied. All saved file and creator chec
 
 The chosen stocks are today's convenience sample, creating selection/survivorship bias. Historical adjusted data are not a point-in-time archive, and ^NSEI is a price index rather than an investable total-return instrument. Later validation will maintain chronological information cutoffs and explicitly modeled costs; no current data checks establish predictive value.
 
-Next, after team confirmation: build the phone-friendly Streamlit skeleton reading these saved artifacts, with clear empty-rule states and no invented tuning/asymmetry results. Day 2 will add the common-date walk-forward tuning loop using the existing matching and accounting functions. Keep the research pipeline offline; the optional Latest Signals page remains separate.
+Next, after team confirmation: Day 2 adds the common-date walk-forward loop, all 81 configurations per fold, selection logs and adaptive fitting windows using the existing matching/accounting functions. The app will then receive the computed tuning results and out-of-sample curves. Keep the research pipeline offline; the optional Latest Signals page remains separate.
 
 Primary software reference: [yfinance download options](https://ranaroussi.github.io/yfinance/reference/api/yfinance.download.html).

@@ -1,0 +1,109 @@
+{
+  "annualization": "CAGR uses inclusive first-to-last execution calendar dates and 365.25 days/year; daily Sharpe uses sample std, sqrt(252), risk-free rate zero.",
+  "code_sha256": {
+    "backtest.py": "ec5bbee763f8a8bb296d4ff0f27f4e746e4eb16c713d2349789cb6063645568d",
+    "data.py": "edafaec1435163a700b64acfb1b6a941514f47cd80ae4af5bc496beb9d41894b",
+    "labels.py": "597afd3abac89fc3404cbcac5f1bf9f598b61e100ab01a490eb042ccde8aae97",
+    "mining.py": "b0271cc5f90ae7569c25e279695eb173008b4a57885ec5bc667480ba504055d0",
+    "pipeline.py": "ce2dd63bf4a1e50711dac75f6d24c18f252d411b7acb60e7b1f7e5bf34f33f78",
+    "signals.py": "751193bf2f7b68494625a2f6e27387e89a75eb8d451011c11d6408c841b8fb70"
+  },
+  "comparison_at_0_1_percent_cost": [
+    {
+      "applied_cost": 0.001,
+      "net_return": 0.0,
+      "strategy": "RULES_PORTFOLIO",
+      "trade_count": 0.0
+    },
+    {
+      "applied_cost": 0.0,
+      "net_return": -0.025896570556356857,
+      "strategy": "NIFTY50_PRICE_INDEX",
+      "trade_count": null
+    },
+    {
+      "applied_cost": 0.001,
+      "net_return": -0.01366458970658857,
+      "strategy": "BUY_HOLD_BASKET",
+      "trade_count": 3.0
+    }
+  ],
+  "cost_convention": "Flat total round-trip fraction of entry notional; no charge for cash; buy-and-hold half at entry and half at exit; NIFTY reference uncosted.",
+  "created_at_utc": "2026-11-18T16:26:51.367529+00:00",
+  "evaluation_scope": "single_holdout_engineering_checkpoint",
+  "files": {
+    "equity.csv": "62a59176c8f7d0bb7566b8914463470771834cb4252d3f5e4bc69b4307052fc9",
+    "metrics.csv": "14cc0300a05d7971e5a89b4356ff7a9056cf6e372bbc49846eae1cf97bc32c9d",
+    "metrics.json": "9e08c5b3deb516809bd0fda619a2824360acd3c11b35a6d346a74c799b9391cf",
+    "predictions.csv": "131b8ab802d63b971c464eceff5d79c1aa5bc6aae6ccc492de9beb1d7106a444",
+    "rules.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "trades.csv": "6f007c933350a311637e0ba2c3245606a376793cc0c893711c6709d36ad444bb",
+    "training_sessions.csv": "c7c1bcd2f6478ed3cfbb117d0a4dd6d8053c4b40ccc3ba850f777a835020ba5d"
+  },
+  "fill_convention": "Idealized next-session open and same-session close, fractional shares, fixed 1/N current-equity allocation, no cash interest.",
+  "first_training_execution_session": "2020-12-28",
+  "first_training_feature_session": "2020-12-24",
+  "fit_cutoff": "2022-12-30",
+  "initial_capital": 100000.0,
+  "last_training_execution_session": "2022-12-30",
+  "last_training_feature_session": "2022-12-29",
+  "metric_conventions": "Max drawdown is a positive loss magnitude including initial capital; undefined metrics null; positive profit factor with no losses is Infinity text in JSON.",
+  "min_confidence": 0.6,
+  "min_support": 0.02,
+  "model_rule_count": 0,
+  "portfolio_metrics": [
+    {
+      "applied_cost": 0.0005,
+      "cagr": 0.0,
+      "cost": 0.0005,
+      "max_drawdown": 0.0,
+      "net_return": 0.0,
+      "profit_factor": null,
+      "sharpe": null,
+      "strategy": "RULES_PORTFOLIO",
+      "trade_count": 0.0,
+      "win_rate": null
+    },
+    {
+      "applied_cost": 0.001,
+      "cagr": 0.0,
+      "cost": 0.001,
+      "max_drawdown": 0.0,
+      "net_return": 0.0,
+      "profit_factor": null,
+      "sharpe": null,
+      "strategy": "RULES_PORTFOLIO",
+      "trade_count": 0.0,
+      "win_rate": null
+    },
+    {
+      "applied_cost": 0.005,
+      "cagr": 0.0,
+      "cost": 0.005,
+      "max_drawdown": 0.0,
+      "net_return": 0.0,
+      "profit_factor": null,
+      "sharpe": null,
+      "strategy": "RULES_PORTFOLIO",
+      "trade_count": 0.0,
+      "win_rate": null
+    }
+  ],
+  "prediction_rows": 63,
+  "schema_version": 1,
+  "software": {
+    "mlxtend": "0.25.0",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "python": "3.13.12"
+  },
+  "source_sha256": "668376329abdc570b4724454c921bd0e712b359af18692ec36cb0e30303ae601",
+  "status": "holdout_computed_offline",
+  "test_end": "2023-01-31",
+  "test_sessions": 21,
+  "test_start": "2023-01-02",
+  "theta": 0.005,
+  "training_transactions": 500,
+  "window": 500,
+  "zero_volume_policy": "Abort an assumed LONG execution on a zero-volume bar; do not selectively drop the trade or session."
+}
