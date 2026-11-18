@@ -4,11 +4,11 @@ CS G520 Advanced Data Mining, BITS Pilani Hyderabad. Team: Tanish Kumar Gupta an
 
 The project investigates adaptive fitting-window selection, automatic association-rule thresholds and trading-cost-aware validation. It uses daily stock movements to mine interpretable rules for the following session. It does not claim to solve market prediction or concept drift.
 
-## Current checkpoint: Day 1, Step 1
+## Current checkpoint: Day 1, Step 2
 
-Implemented: a validated, immutable three-stock-plus-NIFTY data snapshot and offline cache reader. Labels, mining, walk-forward results, backtests and Streamlit pages are subsequent checkpoints; there are no empirical strategy results yet.
+Implemented: a validated, immutable three-stock-plus-NIFTY data snapshot, offline cache reader, causal U/D/N features, next-session intraday targets and outcome-availability filtering. Mining, walk-forward results, backtests and Streamlit pages are subsequent checkpoints; there are no empirical strategy results yet.
 
-The approved [design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md) explains the research protocol. The [current implementation checklist](docs/superpowers/plans/2026-11-18-day1-data-snapshot.md) covers this data step.
+The approved [design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md) explains the research protocol. The [current implementation checklist](docs/superpowers/plans/2026-11-18-day1-labels.md) covers labels and availability; the [previous checklist](docs/superpowers/plans/2026-11-18-day1-data-snapshot.md) records the data step.
 
 ## Setup
 
@@ -105,7 +105,44 @@ The downloader removes that explicitly verified non-session from the analytical 
 .venv/bin/python -m pip check
 ```
 
-The suite covers data validity, matching calendars, completed-session cutoffs, immutable writes, offline loading, checksum tampering, explicit provider settings and audited holiday exclusion. It uses clearly synthetic in-memory tables; the tests do not download market prices. The future-data perturbation test belongs to the next labels checkpoint, where the feature calculation will exist.
+The suite covers data validity, matching calendars, completed-session cutoffs, immutable writes, offline loading, checksum tampering, explicit provider settings and audited holiday exclusion. Label tests also verify the exact return formulas, threshold boundaries, unavailable outcomes, per-stock shifts, next-session dates, outcome availability and future-data independence. It uses clearly synthetic in-memory tables; the tests do not download market prices.
+
+The required leakage test changes every price bar after a chosen session, while keeping OHLC internally valid. Features through the cutoff must remain exactly equal. A negative control confirms that targets depending on the changed future bars do change, so an ineffective mutation cannot make the test pass. A separate prefix test compares features computed from the observed prefix against those from the full dataset.
+
+## Build or inspect the labels offline
+
+This repeatable command reads the existing cache and prints counts and the latest observed feature items:
+
+```bash
+.venv/bin/python -m src.labels --theta 0.005
+```
+
+Theta is a decimal return: 0.005 means 0.5%. U means return above theta, D means below -theta, and N is the interval between them including equality. A documented eight-float64-epsilon tolerance handles division round-off at exact boundaries; it is not a tuned market parameter. Missing returns remain missing, and the benchmark is excluded from stock items.
+
+Observed output at theta=0.005:
+
+| Quantity | Actual count |
+| --- | ---: |
+| Feature rows, including unavailable initial features | 4,446 |
+| Known features | 4,443 |
+| Target rows, including unknown final targets | 4,446 |
+| Known targets | 4,443 |
+| Complete supervised sample rows | 4,440 |
+| Feature sessions represented in complete samples | 1,480 |
+
+Each of the three stocks lacks a previous close on the first cached session, so the first feature is unavailable. Each also lacks the next session on the last cached session, so its final target and execution date are unknown. The final feature remains usable. Neither boundary is filled with N.
+
+To write the derived files once to a new directory:
+
+```bash
+.venv/bin/python -m src.labels --theta 0.005 --output data/processed/day1_labels_theta_0p005
+```
+
+That directory contains features.csv, targets.csv, samples.csv and manifest.json. If it already exists, use the preview command without --output. The manifest records source checksum, theta, numerical tolerance, creator-code checksum, software versions, counts and derived-file checksums. The source snapshot remains unchanged. The label preview also passed with all networking denied.
+
+features.csv contains no NEXT_ items. targets.csv holds NEXT_ outcomes separately, with execution_session and outcome_available_session. samples.csv is the complete join, but it is not automatically valid training input at every historical cutoff. Later training must first call eligible_training_samples(samples, cutoff), which admits only outcomes known after the specified session has closed.
+
+Availability columns contain exchange session dates, interpreted as after-close availability. A printed midnight is a date representation, not a claim that close prices or targets were known at midnight. The helper rejects intraday and timezone-aware cutoffs so they cannot be mistaken for session-close dates.
 
 ## Worked example from the actual cache
 
@@ -116,14 +153,25 @@ The last two adjusted RELIANCE closes in this snapshot are:
 | 2026-11-16 | 1344.80004883 |
 | 2026-11-17 | 1367.00000000 |
 
-Calculated directly from the cache, close-to-close return is (1367 / 1344.80004883 - 1) * 100 = approximately 1.650799%. The next checkpoint will turn returns into U/D/N features; this observation is not a prediction or a trading return.
+Calculated directly from the cache, close-to-close return is (1367 / 1344.80004883 - 1) * 100 = approximately 1.650799%, producing RELIANCE_U for 17 November at theta=0.005. That session's next-session target is unknown in this snapshot, so the row cannot enter supervised training.
 
 > **Key Insight:** A return needs two genuine consecutive trading sessions. A provider's holiday placeholder must not become an extra neutral day, and reproducing an experiment starts with preserving the exact input data.
+
+For a complete observed feature/target pair, consider RELIANCE's feature on 16 November:
+
+| Component | Observed inputs | Return | Label at 0.5% |
+| --- | --- | ---: | --- |
+| Feature for 16 November | Close 13 Nov: 1339.69995117; close 16 Nov: 1344.80004883 | +0.380690% | RELIANCE_N |
+| Target executed 17 November | Open 17 Nov: 1339.00; close 17 Nov: 1367.00 | +2.091113% | NEXT_RELIANCE_U |
+
+The implementation computes these using the full cached precision, not the rounded display values. The target uses that next session's open, not the previous close. The row is ineligible for training at the 16 November close and eligible only after the 17 November close. It is an observed label example, not a prediction or a strategy profit.
+
+> **Key Insight:** Computing a future target for historical evaluation is legitimate. Letting a training fit see that target before its execution session has finished is look-ahead bias.
 
 ## Research limits and next checkpoint
 
 The chosen stocks are today's convenience sample, creating selection/survivorship bias. Historical adjusted data are not a point-in-time archive, and ^NSEI is a price index rather than an investable total-return instrument. Later validation will maintain chronological information cutoffs and explicitly modeled costs; no current data checks establish predictive value.
 
-Next, after team confirmation: implement dated close-to-close features, next-session open-to-close targets and a test proving that changes after session t cannot alter features available at t. Keep the research pipeline offline; the optional Latest Signals page remains separate.
+Next, after team confirmation: mine guarded Apriori rules on a chronological training subset, permitting only observed feature antecedents and exactly one NEXT_ consequent. Keep the research pipeline offline; the optional Latest Signals page remains separate.
 
 Primary software reference: [yfinance download options](https://ranaroussi.github.io/yfinance/reference/api/yfinance.download.html).
