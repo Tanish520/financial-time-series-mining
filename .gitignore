@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+.streamlit/secrets.toml
+Project Information/
+data/raw/
+data/processed/
+data/results/
