@@ -4,11 +4,11 @@ CS G520 Advanced Data Mining, BITS Pilani Hyderabad. Team: Tanish Kumar Gupta an
 
 The project investigates adaptive fitting-window selection, automatic association-rule thresholds and trading-cost-aware validation. It uses daily stock movements to mine interpretable rules for the following session. It does not claim to solve market prediction or concept drift.
 
-## Current checkpoint: Day 1, Step 3
+## Current checkpoint: Day 1, Step 4
 
-Implemented: a validated, immutable three-stock-plus-NIFTY data snapshot, offline cache reader, causal U/D/N features, next-session intraday targets, outcome-availability filtering and guarded Apriori mining. The fixed training-only mining checkpoint retains zero rules at its declared cutoffs. Prediction matching, walk-forward results, backtests and Streamlit pages are subsequent checkpoints; there are no empirical strategy results yet.
+Implemented: the frozen data snapshot, causal labels, guarded Apriori, features-only frozen-rule matching, finite-capital execution, cost-aware metrics and an offline fixed chronological holdout. The fixed configuration retains zero rules and remains in cash during the first holdout. Walk-forward tuning and Streamlit pages are subsequent checkpoints; this single holdout is an engineering check, not the final research evaluation.
 
-The approved [design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md) explains the research protocol. The [current implementation checklist](docs/superpowers/plans/2026-11-18-day1-mining.md) covers mining. Earlier checklists record [labels](docs/superpowers/plans/2026-11-18-day1-labels.md) and the [data snapshot](docs/superpowers/plans/2026-11-18-day1-data-snapshot.md).
+The approved [design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md) explains the research protocol. The [current implementation checklist](docs/superpowers/plans/2026-11-18-day1-backtest.md) covers matching and backtesting. Earlier checklists record [mining](docs/superpowers/plans/2026-11-18-day1-mining.md), [labels](docs/superpowers/plans/2026-11-18-day1-labels.md) and the [data snapshot](docs/superpowers/plans/2026-11-18-day1-data-snapshot.md).
 
 ## Setup
 
@@ -194,7 +194,7 @@ This is a valid empty result. Do not lower thresholds after inspecting the resul
 
 One transaction represents one complete day of all three stocks' feature items and next-session target items. Consequently the support denominator is 500 days, not 1,500 stock-day rows. The fitting window is selected by outcome availability before encoding. The encoder sees only this training subset. Apriori's maximum itemset length is three, including the consequent. Final rules must contain one or two observed feature antecedents, exactly one NEXT_ consequent, and lift strictly above one. Integer counts enforce the lift comparison without mistaking floating-point round-off for positive lift.
 
-Final metrics are reconstructed from integer transaction counts before confidence filtering and stricter reuse. A regression covers 15 matching outcomes in 25 antecedent occurrences: exactly 60% must pass an inclusive 60% cutoff, even if intermediate library arithmetic reports 59.99999999999999%. Review identified this boundary issue; both the direct-mining and stricter-reuse paths are now checked. The current suite has 79 passing tests with warnings treated as errors.
+Final metrics are reconstructed from integer transaction counts before confidence filtering and stricter reuse. A regression covers 15 matching outcomes in 25 antecedent occurrences: exactly 60% must pass an inclusive 60% cutoff, even if intermediate library arithmetic reports 59.99999999999999%. Review identified this boundary issue; both the direct-mining and stricter-reuse paths are now checked. The full current suite has 120 passing tests with warnings treated as errors.
 
 To save a new training-artifact directory once:
 
@@ -244,10 +244,69 @@ Expected counts: days 500, antecedent 37, target 173, joint 21.
 
 > **Key Insight:** A pattern can occur more often than its base rate and still fail the declared evidence threshold. Empty rule sets are legitimate outcomes; training confidence is not proof of future performance.
 
+## First chronological holdout
+
+Run the complete fixed holdout offline:
+
+```bash
+.venv/bin/python -m src.pipeline --cutoff 2022-12-30 --test-sessions 21
+```
+
+The fixed 500-session model is fitted once through the declared close. src/signals.py accepts only the six observed feature columns, rejects target-bearing inputs and models fitted after a feature session, and generates decisions without realized outcomes. Accounting then uses the next observed session's open and close. The same decisions are evaluated at all three cost assumptions; no tuning or threshold changes occur in this command.
+
+Observed test interval: 2-31 January 2023, 21 execution sessions and 63 stock-day decisions. All decisions are cash because the retained rule set is empty; their forecast classes remain unknown, not N. Strategy net return, CAGR and maximum drawdown are zero at all three cost levels. Trade count is zero, while Sharpe, profit factor and win rate are undefined and saved as null.
+
+At the 0.1% total round-trip cost scenario:
+
+| Comparison | Observed holding-period return |
+| --- | ---: |
+| Rules portfolio, cash | 0.0000% |
+| Equal-initial-weight holding basket, after modeled costs | -1.3665% |
+| NIFTY 50 price-index reference, uncosted | -2.5897% |
+
+Individual stock holding controls returned approximately -7.7921% for RELIANCE, +5.2371% for TCS and -1.5444% for HDFCBANK after the same once-per-holding round-trip charge. Standalone per-stock rule paths remain cash. These paths are independent strategy comparisons, not additional positions added to one capital budget.
+
+The cash outcome over this month does not establish predictive skill or resolve the research gaps. Preserve this result and proceed to the predeclared walk-forward evaluation rather than changing parameters in response to this test period.
+
+### Matching and accounting conventions
+
+- Highest training confidence wins. Exact top-confidence conflicts between classes produce cash and an unknown forecast. Same-class ties use lift, support, shorter antecedent and canonical item ordering. D and N forecasts remain recorded but do not open short positions.
+- Every session has an explicit decision for every stock, including cash. Missing or duplicate decisions, omitted sessions and unknown execution dates fail validation rather than disappear from performance calculations.
+- Each long receives 1/N of current pre-session capital; unused allocations remain cash. Positions use fractional shares, enter at the next open and exit that close. No overnight exposure or cash interest is modeled for the rule strategy.
+- The total round-trip cost c is deducted once against entry notional. This is a flat friction scenario, not a broker-specific Indian charge schedule. The 0.5% scenario is not claimed as a direct replication of Nair's cost convention.
+- A zero-volume LONG bar invalidates the assumed execution and aborts the run. It is not used as an after-the-fact filter that quietly removes a trade or date.
+- Holding controls enter at the first test open and exit at the last close. They retain overnight moves, charge c/2 at entry and c/2 at exit against initial notional, and do not rebalance the initial basket weights. The NIFTY price-index reference is uncosted and has no hypothetical trade ledger.
+- Metrics use all daily observations, including cash days. Maximum drawdown includes starting capital and is reported as a positive loss magnitude. Profit factor and win rate use net currency PnL, not directional-label correctness.
+- CAGR uses inclusive calendar dates and 365.25 days/year. Daily Sharpe uses sample standard deviation, a zero risk-free rate and sqrt(252) scaling. Short-period annualization is descriptive and depends on assumptions; it is not a dependable long-run forecast. See [Sharpe's primary discussion of the ratio and time dependence](https://web.stanford.edu/~wfsharpe/art/sr/sr.htm).
+
+The synthetic accounting test allocates 10,000 INR from a two-stock 20,000 INR portfolio to a position opening at 200 and closing at 202. The executed calculation produces 100 INR gross PnL, 10 INR cost at 0.1%, and 90 INR net PnL; total portfolio equity becomes 20,090 INR. The synthetic inputs deliberately include an overnight gap so using the previous close instead of the execution open would fail the test. This is a test example, not an observed strategy profit.
+
+> **Key Insight:** A valid backtest must account for when a signal was knowable, where entry capital came from, and every modeled cost. Holding cash in a falling month is an observed outcome, not evidence that a model predicted the decline.
+
+### Saved holdout bundle
+
+Create a new result directory once:
+
+```bash
+.venv/bin/python -m src.pipeline --cutoff 2022-12-30 --test-sessions 21 --output data/results/day1_holdout_fixed_2022_12_30
+```
+
+That directory already exists in this workspace; preview without --output to repeat the calculation. It contains:
+
+- predictions.csv: all 63 dated, cost-independent stock decisions with rule provenance.
+- equity.csv: 567 rows, covering all 21 sessions for nine comparisons at three cost scenarios.
+- metrics.csv and metrics.json: 27 comparison/scenario rows with the seven requested metrics. Undefined metrics are null in JSON; positive profit factor without losses is the text Infinity, avoiding nonstandard bare JSON constants.
+- trades.csv: labelled strategy/control ledgers. The actual run contains 18 control-ledger rows and zero rule-strategy trades; do not interpret control trades as mined signals.
+- rules.json: the empty frozen rule list.
+- training_sessions.csv: the exact 500 fitting session pairs, with all outcomes known by the cutoff.
+- manifest.json: exact training/test boundaries, assumptions, source/creator/software lineage and checksums for the saved files.
+
+The final command passed with networking denied. All saved file and creator checksums were verified, the source/label/mining artifacts were unchanged, and each non-index equity path reconciled with its net ledger. A positive-trade synthetic integration case checks the active strategy path separately from the real empty-rule case. Review found no outstanding timing, accounting, benchmark or metric issues after adding the exact fitting-date provenance.
+
 ## Research limits and next checkpoint
 
 The chosen stocks are today's convenience sample, creating selection/survivorship bias. Historical adjusted data are not a point-in-time archive, and ^NSEI is a price index rather than an investable total-return instrument. Later validation will maintain chronological information cutoffs and explicitly modeled costs; no current data checks establish predictive value.
 
-Next, after team confirmation: add deterministic rule matching and the first chronological, cost-aware holdout backtest. Preserve no-rule cash behavior and report it honestly. Keep the research pipeline offline; the optional Latest Signals page remains separate.
+Next, after team confirmation: build the phone-friendly Streamlit skeleton reading these saved artifacts, with clear empty-rule states and no invented tuning/asymmetry results. Day 2 will add the common-date walk-forward tuning loop using the existing matching and accounting functions. Keep the research pipeline offline; the optional Latest Signals page remains separate.
 
 Primary software reference: [yfinance download options](https://ranaroussi.github.io/yfinance/reference/api/yfinance.download.html).
