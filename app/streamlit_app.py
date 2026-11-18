@@ -5,6 +5,12 @@ from __future__ import annotations
 import logging
 import os
 from pathlib import Path
+import sys
+
+# Hosted console-script launches put only app/ on Python's import path.
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 import altair as alt
 import pandas as pd

@@ -2,6 +2,10 @@
 
 The application is Python Streamlit. Static/Cloudflare Worker Sites hosting cannot execute this server, so deployment targets Streamlit Community Cloud. Hosting status will be updated after the live app is verified.
 
+The [project repository](https://github.com/Tanish520/financial-time-series-mining) is public, on branch `main`. It was created privately and made public with the team's explicit authorization on 19 November 2026 so Streamlit's existing GitHub connection could access this course project. Original course PDFs, raw research caches, environments and secrets are excluded from Git.
+
+The initial full release commit `10c28665c063637387f15ba65b4f89c13befeb00` passed [GitHub Actions CI](https://github.com/Tanish520/financial-time-series-mining/actions/runs/44382806463). After a hosted import-path correction, a fresh local verification passed all 273 tests with warnings treated as errors and found no broken dependencies.
+
 ## Streamlit Community Cloud
 
 The complete app runs from the versioned display bundle; raw research caches and secrets are not required.
@@ -12,7 +16,7 @@ The complete app runs from the versioned display bundle; raw research caches and
 4. In advanced settings select Python **3.13**, matching the pinned requirements. Do not silently use a different version.
 5. Deploy and wait for a successful app load. Test all five views, portfolio/stock and cost selectors, and the cached Latest page. Use an explicit refresh to test the provider boundary separately.
 
-The exact repository URL, branch and verified live URL are recorded here after publication. No account approval, deployment success or hosted visual check is inferred from preparing these files.
+GitHub is connected to the `tanish520` Streamlit workspace. A verified live URL will be recorded here after publication. No deployment success or hosted visual check is inferred from preparing these files.
 
 ## Local fallback
 

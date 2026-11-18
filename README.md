@@ -24,7 +24,7 @@ Training histories won 27 folds (250 sessions), 10 folds (500) and seven folds (
 
 ## Application and report
 
-The local app is available at **http://127.0.0.1:8501** while its server is running. Hosted deployment status is recorded in [deployment notes](docs/DEPLOYMENT.md).
+The source and saved display results are published in the [GitHub repository](https://github.com/Tanish520/financial-time-series-mining). The local app is available at **http://127.0.0.1:8501** while its server is running. Hosted deployment status is recorded in [deployment notes](docs/DEPLOYMENT.md).
 
 - [Six-page report](output/pdf/financial_time_series_report.pdf), [Markdown report](output/project_report.md), and exported [figures](output/report_figures).
 - [Demo script](docs/DEMO.md), [contributor notes](docs/CONTRIBUTING.md), and [approved design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md).
@@ -66,7 +66,7 @@ make reproduce
 make report
 ```
 
-The last full verification passed **272 tests** with warnings treated as errors; dependency checks passed. Tests include leakage perturbation, next-session maturity, exact-threshold rules, finite capital/costs, continuous folds, weighted asymmetry, all app pages, immutable checksums and latest-data boundaries. Independent research and app reviews found no remaining material issues after regression fixes.
+The last full verification passed **273 tests** with warnings treated as errors; dependency checks passed. Tests include leakage perturbation, next-session maturity, exact-threshold rules, finite capital/costs, continuous folds, weighted asymmetry, all app pages, immutable checksums, latest-data boundaries and a hosted entry-point launch from an unrelated working directory. Independent research and app reviews found no remaining material issues after regression fixes.
 
 The research command requires the frozen corrected snapshot under data/raw/full_ten_stocks_corrected. It is included in the self-contained local archive; raw caches stay excluded from Git. A fresh GitHub checkout can display all saved results immediately without raw data. To repeat the study using an existing snapshot:
 
@@ -74,7 +74,7 @@ The research command requires the frozen corrected snapshot under data/raw/full_
 .venv/bin/python -m src.experiment --snapshot data/raw/full_ten_stocks_corrected --output data/results/reproduction
 ```
 
-Output directories are immutable. If reproduction already exists, choose another directory or use `make reproduce RUN_DIR=data/results/another_run`. The experiment never silently downloads or refreshes data. The full production run passed with OS networking denied. All 15 file hashes, creator hashes, candidate selections, timing boundaries, ledgers and weighted asymmetry were independently reconciled.
+Output directories are immutable. If reproduction already exists, choose another directory or use `make reproduce RUN_DIR=data/results/another_run`. The experiment never silently downloads or refreshes data. Both complete runs finished with OS networking denied. A second full run reproduced all 15 payload files byte for byte; its manifest differed only in the creation timestamp. File hashes, creator hashes, candidate selections, timing boundaries, ledgers and weighted asymmetry were independently reconciled.
 
 Report generation reads the verified display bundle only and exports a six-page PDF, Markdown and three figures. The PDF was rendered and all six pages inspected. Historical checkpoint instructions remain in the engineering log; they are not the current research evaluation.
 

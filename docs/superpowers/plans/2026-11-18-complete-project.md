@@ -30,7 +30,7 @@ Production command:
 ## Task 2: Shared saved-result contract
 
 - [x] Write manifest schema_version=2 and evaluation_scope=nested_walk_forward with exact grid, guards, source/code/software hashes and all payload hashes. Use the fixed names below.
-- [x] Keep folds.csv, tuning.csv, predictions.csv, training_sessions.csv, equity.csv, metrics.csv/json, trades.csv, rules.json, outcomes.csv, asymmetry.csv, asymmetry_groups.csv, latest_model.json and latest_prices.csv. Existing files are never overwritten.
+- [x] Keep folds.csv, tuning.csv, predictions.csv, training_sessions.csv, equity.csv, metrics.csv/json, trades.csv, rules.json, outcomes.csv, asymmetry.csv, asymmetry_groups.csv, latest_model.json, latest_prices.csv and latest_signals.json. Existing files are never overwritten.
 - [x] folds.csv contains fold_id, fit_cutoff, inner_fit_cutoff, validation_start/end, test_start/end, test_sessions, eligible_candidates, selected_window, theta, min_support/confidence, validation_net_return, validation_trade_count/sessions, rule_count and fallback. Fallback rows have missing selected parameters, not an invented winner.
 - [x] predictions.csv retains the single-fold columns plus fold_id and variant=TUNED/FIXED. All variants use identical contiguous execution dates. All rule metrics are training statistics.
 - [x] rules.json is a list of final fitted rules tagged fold_id, variant, fit_cutoff and theta. Existing antecedents/consequent/support/confidence/lift fields remain unchanged.
@@ -50,7 +50,7 @@ Production command:
 - [x] Generate a concise report in Markdown and PDF using real saved outputs, with method, research gaps addressed/investigated, net costs, fixed comparison, asymmetry, limitations and bibliography. Verify primary sources before asserting exact paper-specific costs. Do not claim concept drift is solved or detected just because a window changes.
 - [x] Create exported equity/asymmetry/tuning figures, a short live-demo script, a contributor guide, a one-command research entry point and deployment instructions. Keep optional stretch work out of the critical path.
 - [x] Add a lightweight CI workflow and a container deployment option. Verify a fresh local start using the packaged results; run the full test suite with warnings as errors and complete independent review.
-- [ ] Publish a private GitHub repository using authenticated account access after all source is reviewable. Connector lacks repository creation; authenticated gh is the fallback for this operation. Keep secrets and original PDFs excluded.
+- [x] Publish a private GitHub repository using authenticated account access after all source is reviewable. Connector lacks repository creation; authenticated gh is the fallback for this operation. Keep secrets and original PDFs excluded. The user explicitly approved making only this course repository public on 19 November 2026 for Streamlit access; that visibility change is now verified.
 - [ ] Attempt Streamlit Community Cloud publication through supported available UI/account access. Verify a deployed URL before claiming success. If hosting authentication or unavailable UI blocks publication, finish all local/deployment artifacts and report that exact remaining external action.
 - [ ] Commit final verified work, generate a self-contained local source/results archive, record actual completion/verification limits and give launch/report/repository links. Do not ask to continue another implementation checkpoint.
 
@@ -61,6 +61,9 @@ Production command:
 - Nine flat zero-volume Yahoo placeholders on 18 March 2025 were corrected from primary NSE observations in a new immutable snapshot; every other row is unchanged. Original and correction source hashes and all evidence are retained.
 - Independent research review reconciled chronology, selected objectives, continuous capital, cost ledgers, controls, asymmetry and all source/artifact hashes with no material findings.
 - Independent app review prompted regressions for missing schemas/metadata, final-model consistency, immutable nested cache values and stale-live responses. All material findings were fixed and re-reviewed.
-- Full test suite: 272 passing with warnings as errors. The core display/latest test set also passed with OS networking denied before the small legend-layout refinement.
+- Full test suite: 273 passing with warnings as errors, including an isolated hosted entry-point launch. The core display/latest test set also passed with OS networking denied before the small legend-layout refinement.
+- A second complete run with OS networking denied reproduced all 15 payloads byte for byte; only the manifest creation timestamp differs. The full release commit passed remote GitHub Actions on Python 3.13.
 - Six-page report generated from verified outputs, rendered and all six pages visually inspected. Desktop Rules/Backtest and a 390-pixel phone-emulated Backtest layout inspected; clipped legend found and refined to two columns with year-bearing date labels. Physical phone testing is not claimed.
-- GitHub publication, live deployment and final archive regeneration are the remaining release steps.
+- GitHub repository: https://github.com/Tanish520/financial-time-series-mining, branch main. Initially private; now public with explicit user authorization. CI passed for release commit 10c2866.
+- Initial cloud launch exposed a console-script import-path assumption. Reproduced the identical failure in an isolated subprocess, added a failing regression, made the entry point resolve its own repository path, and verified all 273 tests. Cloud selected Python 3.14; CI now checks both 3.13 and 3.14 before final hosted verification.
+- Live deployment and final archive regeneration are the remaining release steps.
