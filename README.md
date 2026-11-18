@@ -4,11 +4,11 @@ CS G520 Advanced Data Mining, BITS Pilani Hyderabad. Team: Tanish Kumar Gupta an
 
 The project investigates adaptive fitting-window selection, automatic association-rule thresholds and trading-cost-aware validation. It uses daily stock movements to mine interpretable rules for the following session. It does not claim to solve market prediction or concept drift.
 
-## Current checkpoint: Day 1, Step 2
+## Current checkpoint: Day 1, Step 3
 
-Implemented: a validated, immutable three-stock-plus-NIFTY data snapshot, offline cache reader, causal U/D/N features, next-session intraday targets and outcome-availability filtering. Mining, walk-forward results, backtests and Streamlit pages are subsequent checkpoints; there are no empirical strategy results yet.
+Implemented: a validated, immutable three-stock-plus-NIFTY data snapshot, offline cache reader, causal U/D/N features, next-session intraday targets, outcome-availability filtering and guarded Apriori mining. The fixed training-only mining checkpoint retains zero rules at its declared cutoffs. Prediction matching, walk-forward results, backtests and Streamlit pages are subsequent checkpoints; there are no empirical strategy results yet.
 
-The approved [design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md) explains the research protocol. The [current implementation checklist](docs/superpowers/plans/2026-11-18-day1-labels.md) covers labels and availability; the [previous checklist](docs/superpowers/plans/2026-11-18-day1-data-snapshot.md) records the data step.
+The approved [design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md) explains the research protocol. The [current implementation checklist](docs/superpowers/plans/2026-11-18-day1-mining.md) covers mining. Earlier checklists record [labels](docs/superpowers/plans/2026-11-18-day1-labels.md) and the [data snapshot](docs/superpowers/plans/2026-11-18-day1-data-snapshot.md).
 
 ## Setup
 
@@ -21,7 +21,7 @@ python3.13 -m venv .venv
 
 On the project owner's Mac, the Python executable is /opt/homebrew/bin/python3.13. On Windows, use .venv\Scripts\python.exe in place of .venv/bin/python.
 
-requirements.txt pins the currently installed data and testing packages, including transitive dependencies. App/mining dependencies will be added when those checkpoints are implemented.
+requirements.txt pins the currently installed data, mining and testing packages, including transitive dependencies. mlxtend 0.25.0 was installed with the preceding pins as constraints; previous package versions were preserved. App dependencies will be added at that checkpoint.
 
 ## Check the existing snapshot without downloading
 
@@ -168,10 +168,86 @@ The implementation computes these using the full cached precision, not the round
 
 > **Key Insight:** Computing a future target for historical evaluation is legitimate. Letting a training fit see that target before its execution session has finished is look-ahead bias.
 
+## Mine a declared training window offline
+
+The predeclared fixed mining check uses 500 eligible sessions through the 30 December 2022 close, theta=0.005, support=0.02 and confidence=0.60. These are fixed defaults, not selected by comparing subsequent outcomes.
+
+```bash
+.venv/bin/python -m src.mining --cutoff 2022-12-30 --window 500 --theta 0.005 --min-support 0.02 --min-confidence 0.60
+```
+
+Observed output:
+
+```text
+status: rules_mined_offline
+metric_scope: training_only
+training_transactions: 500
+first_training_feature_session: 2020-12-24
+last_training_feature_session: 2022-12-29
+first_training_execution_session: 2020-12-28
+last_training_execution_session: 2022-12-30
+rule_count: 0
+example_rule: null
+```
+
+This is a valid empty result. Do not lower thresholds after inspecting the result to force a demonstration rule. The independent count audit found 174 candidates satisfying support and lift, but none satisfied the fixed 60% confidence threshold. The thresholds in the approved Day 2 tuning grid will be compared only within chronological validation.
+
+One transaction represents one complete day of all three stocks' feature items and next-session target items. Consequently the support denominator is 500 days, not 1,500 stock-day rows. The fitting window is selected by outcome availability before encoding. The encoder sees only this training subset. Apriori's maximum itemset length is three, including the consequent. Final rules must contain one or two observed feature antecedents, exactly one NEXT_ consequent, and lift strictly above one. Integer counts enforce the lift comparison without mistaking floating-point round-off for positive lift.
+
+Final metrics are reconstructed from integer transaction counts before confidence filtering and stricter reuse. A regression covers 15 matching outcomes in 25 antecedent occurrences: exactly 60% must pass an inclusive 60% cutoff, even if intermediate library arithmetic reports 59.99999999999999%. Review identified this boundary issue; both the direct-mining and stricter-reuse paths are now checked. The current suite has 79 passing tests with warnings treated as errors.
+
+To save a new training-artifact directory once:
+
+```bash
+.venv/bin/python -m src.mining --cutoff 2022-12-30 --window 500 --theta 0.005 --min-support 0.02 --min-confidence 0.60 --output data/results/day1_mining_fixed_2022_12_30
+```
+
+The directory contains rules.json (an empty list for this fixed run), rules.csv (a header-only table), transactions.csv, sessions.csv and manifest.json. The manifest records training dates, thresholds, training-only metric scope, source/code/software lineage and file checksums. Existing output directories are never overwritten. Preview without --output to repeat the calculation.
+
+The public select_rules helper reuses an already-mined result only at equal or stricter support/confidence thresholds. Relaxing either cutoff raises an error because filtered-out itemsets cannot be recovered without re-mining. This will allow Day 2 to score the grid without repeating every Apriori fit.
+
+### Actual rejected-candidate arithmetic
+
+The highest-confidence candidate among those meeting support and lift was:
+
+```text
+HDFCBANK_U & TCS_D -> NEXT_RELIANCE_U
+```
+
+| Count/statistic | Observed training value |
+| --- | ---: |
+| Training days | 500 |
+| Days with the antecedent | 37 |
+| Days with the target, irrespective of antecedent | 173 |
+| Days with both antecedent and target | 21 |
+| Support: 21 / 500 | 4.2% |
+| Confidence: 21 / 37 | 56.7568% |
+| Target base rate: 173 / 500 | 34.6% |
+| Lift: (21 / 37) / (173 / 500) | 1.64037 |
+
+This candidate is rejected because confidence is below 60%. The target means next-session open-to-close return above 0.5%, not merely a positive return. These are training co-occurrence statistics, not out-of-sample accuracy, statistical significance or trading performance. Support, confidence and lift follow the [official mlxtend definitions](https://rasbt.github.io/mlxtend/api_modules/mlxtend.frequent_patterns/association_rules/).
+
+After saving the artifacts, independently check those counts directly:
+
+```bash
+.venv/bin/python - <<'PY'
+import pandas as pd
+x = pd.read_csv('data/results/day1_mining_fixed_2022_12_30/transactions.csv')
+antecedent = x[['HDFCBANK_U', 'TCS_D']].all(axis=1)
+target = x['NEXT_RELIANCE_U']
+print('days:', len(x), 'antecedent:', int(antecedent.sum()),
+      'target:', int(target.sum()), 'joint:', int((antecedent & target).sum()))
+PY
+```
+
+Expected counts: days 500, antecedent 37, target 173, joint 21.
+
+> **Key Insight:** A pattern can occur more often than its base rate and still fail the declared evidence threshold. Empty rule sets are legitimate outcomes; training confidence is not proof of future performance.
+
 ## Research limits and next checkpoint
 
 The chosen stocks are today's convenience sample, creating selection/survivorship bias. Historical adjusted data are not a point-in-time archive, and ^NSEI is a price index rather than an investable total-return instrument. Later validation will maintain chronological information cutoffs and explicitly modeled costs; no current data checks establish predictive value.
 
-Next, after team confirmation: mine guarded Apriori rules on a chronological training subset, permitting only observed feature antecedents and exactly one NEXT_ consequent. Keep the research pipeline offline; the optional Latest Signals page remains separate.
+Next, after team confirmation: add deterministic rule matching and the first chronological, cost-aware holdout backtest. Preserve no-rule cash behavior and report it honestly. Keep the research pipeline offline; the optional Latest Signals page remains separate.
 
 Primary software reference: [yfinance download options](https://ranaroussi.github.io/yfinance/reference/api/yfinance.download.html).
