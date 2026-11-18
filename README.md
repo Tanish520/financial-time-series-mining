@@ -4,11 +4,11 @@ CS G520 Advanced Data Mining, BITS Pilani Hyderabad. Team: Tanish Kumar Gupta an
 
 The project investigates adaptive fitting-window selection, automatic association-rule thresholds and trading-cost-aware validation. It uses daily stock movements to mine interpretable rules for the following session. It does not claim to solve market prediction or concept drift.
 
-## Current checkpoint: Day 1, Step 5
+## Current checkpoint: Day 2, Step 1
 
-Implemented: the frozen data snapshot, causal labels, guarded Apriori, features-only matching, finite-capital execution, cost-aware holdout and a five-view Streamlit preview over saved results. The fixed configuration retains zero rules and remains in cash during the first holdout. Walk-forward tuning is next; this single holdout is an engineering check, not the final research evaluation.
+Implemented: the frozen data snapshot, causal labels, guarded Apriori, features-only matching, finite-capital execution, cost-aware holdout, five-view Streamlit preview and the first nested walk-forward fold. The new fold scores all 81 configurations on common past-only validation dates and explicitly stays in cash when none passes the predeclared trade-count guard. The complete rolling experiment is next; one inspected fold is an engineering checkpoint, not the final research evaluation.
 
-The approved [design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md) explains the research protocol. The [current checklist](docs/superpowers/plans/2026-11-18-day1-streamlit.md) covers the app. Earlier checklists record [backtesting](docs/superpowers/plans/2026-11-18-day1-backtest.md), [mining](docs/superpowers/plans/2026-11-18-day1-mining.md), [labels](docs/superpowers/plans/2026-11-18-day1-labels.md) and the [data snapshot](docs/superpowers/plans/2026-11-18-day1-data-snapshot.md).
+The approved [design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md) explains the research protocol. The [current checklist](docs/superpowers/plans/2026-11-18-day2-first-fold.md) covers the inspected fold. Earlier checklists record the [app](docs/superpowers/plans/2026-11-18-day1-streamlit.md), [backtesting](docs/superpowers/plans/2026-11-18-day1-backtest.md), [mining](docs/superpowers/plans/2026-11-18-day1-mining.md), [labels](docs/superpowers/plans/2026-11-18-day1-labels.md) and the [data snapshot](docs/superpowers/plans/2026-11-18-day1-data-snapshot.md).
 
 ## Setup
 
@@ -65,7 +65,7 @@ The packaging command verifies the source and refuses to overwrite an existing b
 .venv/bin/python -m pip check
 ```
 
-Observed: 22 app tests pass, the full suite has 142 passing tests, and dependency checks pass. AppTest exercises navigation, filters, scope/cost selection, formatting, empty/pending states and missing-result handling. The app tests also pass with OS networking denied; research and provider imports are blocked in a separate check. Both the local root and health endpoint returned HTTP 200. A read-only review found no material issues and confirmed all 12 scope/cost combinations select matching saved curves and metrics.
+Observed at the app checkpoint: 22 app tests passed and dependency checks passed. The full suite now has 166 passing tests including the first-fold checks. AppTest exercises navigation, filters, scope/cost selection, formatting, empty/pending states and missing-result handling. The app tests also passed with OS networking denied; research and provider imports are blocked in a separate check. Both the local root and health endpoint returned HTTP 200. A read-only app review found no material issues and confirmed all 12 scope/cost combinations select matching saved curves and metrics.
 
 Visual desktop/phone QA remains **unverified** in this session: no browser provider was available, and native Chrome/Brave access returned cgWindowNotFound. No screenshot or viewport success is claimed. The local URL is available for manual review; confirm narrow-screen layout before final deployment. The preview server remains available during the ongoing project and can be stopped from its terminal with Ctrl+C.
 
@@ -351,10 +351,59 @@ That directory already exists in this workspace; preview without --output to rep
 
 The final command passed with networking denied. All saved file and creator checksums were verified, the source/label/mining artifacts were unchanged, and each non-index equity path reconciled with its net ledger. A positive-trade synthetic integration case checks the active strategy path separately from the real empty-rule case. Review found no outstanding timing, accounting, benchmark or metric issues after adding the exact fitting-date provenance.
 
+## First nested walk-forward fold
+
+Run the production grid on the frozen three-stock snapshot:
+
+```bash
+.venv/bin/python -m src.walkforward
+```
+
+This read-only preview recomputes the earliest eligible fold. To inspect a different eligible outer cutoff, use --cutoff YYYY-MM-DD. To save a run, add --output with a new directory name. The accepted first run is already saved in data/results/day2_first_fold; existing outputs are never overwritten.
+
+src/walkforward.py implements immutable grid parameters, canonical tie ordering, nine cached inner fits and 81 validation scores. All candidates face the same 63 execution sessions at a fixed 0.1% round-trip cost. Eligibility requires at least 20 stock trades on at least five sessions. Candidate fitting lengths are 250, 500 or expanding, ending before validation. An eligible winner is refitted through the outer cutoff and frozen for the next up-to-21 executions. If none qualifies, there is no selected configuration and every outer decision is cash with an unknown forecast. The fixed 500/0.005/0.02/0.60 control is fitted at the same outer cutoff without inner selection.
+
+Observed split:
+
+| Stage | Dates / count |
+| --- | --- |
+| Inner fitting, 250 sessions | Execution outcomes: 25 November 2021–25 November 2022 |
+| Inner fitting, 500 / expanding | Execution outcomes: 19 November 2020–25 November 2022; 500 sessions for both at this first cutoff |
+| Common validation | 28 November 2022–23 February 2023; 63 executions |
+| Outer cutoff close | 23 February 2023 |
+| Frozen outer test | 24 February–27 March 2023; 21 executions |
+
+Actual outcome: all 81 configurations were scored; zero were eligible. The largest validation trade count was 14, below the required 20. Preserve the guard instead of relaxing it after seeing the result. The tuned portfolio therefore has zero trades, zero return and a flat 100,000 INR equity path. The fixed control also retains zero rules at this cutoff. No adaptive window won this fold, and the identical 500/expanding histories at the first cutoff provide no window-length contrast yet.
+
+At the 0.1% cost scenario, the holding basket returned -5.9526% and the uncosted NIFTY price-index reference returned -3.4429%. Holding cash during this interval does not establish predictive skill. These figures describe this one checkpoint, not the aggregate walk-forward experiment.
+
+The saved nine-file directory contains:
+
+- tuning.csv: all 81 scores, exact candidate parameters, validation trades/days, eligibility, selection flag and fitting boundaries.
+- predictions.csv: 126 cost-independent decisions, covering both variants, three stocks and 21 executions. No fallback forecast is converted into N.
+- training_sessions.csv: exact inner/refit sample pairs, with stage, variant, fit identifier and availability cutoff. No fictitious tuned fit is recorded for the fallback.
+- equity.csv: 441 rows, covering seven comparisons at three costs. Both portfolio variants use the same frozen decisions at every cost.
+- metrics.csv/json: 21 comparison/scenario rows. Undefined metrics remain null and positive infinite profit factor is text in JSON.
+- trades.csv: 18 holding-control ledger rows; zero model trades. rules.json contains the genuine empty final rule lists.
+- manifest.json: source/code/software hashes, full grid, guards, objective/tie rule, split boundaries, selected parameters or explicit fallback, and eight file checksums.
+
+Verify the checkpoint:
+
+```bash
+.venv/bin/python -m pytest tests/test_walkforward.py -q -W error
+.venv/bin/python -m pytest -q -W error
+```
+
+Observed: 24 focused tests and 166 total tests pass. Checks include positive synthetic trading, both eligibility guards, canonical objective ties, exact common validation/fit boundaries, permitted historical refitting, final partial blocks, future-price perturbation, all-cost ledger reconciliation and saved provenance. The actual 81-configuration run passed with OS networking denied. A second offline run reproduced all eight result files byte for byte and every manifest field except creation time. Independent read-only review found no material issues, confirmed exactly nine inner fits and checked cached rules against direct mining for every configuration. The source snapshot, prior research code and curated Day 1 display bundle were unchanged.
+
+The running Streamlit preview still displays its verified Day 1 holdout bundle. Full rolling results and their app integration are the next checkpoint; the single-fold files are not silently substituted into the old display contract.
+
+> **Key Insight:** A tuning procedure may correctly select nothing. Here, 14 observed validation trades do not meet the predeclared 20-trade minimum, so the auditable result is a dated cash fallback rather than a forced winner.
+
 ## Research limits and next checkpoint
 
 The chosen stocks are today's convenience sample, creating selection/survivorship bias. Historical adjusted data are not a point-in-time archive, and ^NSEI is a price index rather than an investable total-return instrument. Later validation will maintain chronological information cutoffs and explicitly modeled costs; no current data checks establish predictive value.
 
-Next, after team confirmation: Day 2 adds the common-date walk-forward loop, all 81 configurations per fold, selection logs and adaptive fitting windows using the existing matching/accounting functions. The app will then receive the computed tuning results and out-of-sample curves. Keep the research pipeline offline; the optional Latest Signals page remains separate.
+Next, after team confirmation: roll the inspected procedure across the remaining 21-session blocks, preserving continuous portfolio capital and earlier frozen predictions. Record all 81 scores per fold and compare the combined tuned procedure against the fixed control. The app will then receive the computed tuning results and out-of-sample curves. Keep the research pipeline offline; the optional Latest Signals page remains separate.
 
 Primary software reference: [yfinance download options](https://ranaroussi.github.io/yfinance/reference/api/yfinance.download.html).
