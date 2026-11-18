@@ -24,7 +24,7 @@ Training histories won 27 folds (250 sessions), 10 folds (500) and seven folds (
 
 ## Application and report
 
-The source and saved display results are published in the [GitHub repository](https://github.com/Tanish520/financial-time-series-mining). The local app is available at **http://127.0.0.1:8501** while its server is running. Hosted deployment status is recorded in [deployment notes](docs/DEPLOYMENT.md).
+Open the [live application](https://financial-time-series-mining-jeksedhe7pc74gmdqekycu.streamlit.app/) or the [GitHub repository](https://github.com/Tanish520/financial-time-series-mining). The local app is available at **http://127.0.0.1:8501** while its server is running. Runtime details and verification limits are recorded in [deployment notes](docs/DEPLOYMENT.md).
 
 - [Six-page report](output/pdf/financial_time_series_report.pdf), [Markdown report](output/project_report.md), and exported [figures](output/report_figures).
 - [Demo script](docs/DEMO.md), [contributor notes](docs/CONTRIBUTING.md), and [approved design](docs/superpowers/specs/2026-11-18-financial-time-series-mining-design.md).
@@ -66,7 +66,7 @@ make reproduce
 make report
 ```
 
-The last full verification passed **273 tests** with warnings treated as errors; dependency checks passed. Tests include leakage perturbation, next-session maturity, exact-threshold rules, finite capital/costs, continuous folds, weighted asymmetry, all app pages, immutable checksums, latest-data boundaries and a hosted entry-point launch from an unrelated working directory. Independent research and app reviews found no remaining material issues after regression fixes.
+The last full verification passed **273 tests** with warnings treated as errors; dependency checks passed. [GitHub Actions](https://github.com/Tanish520/financial-time-series-mining/actions/runs/44389933145) also passed all 273 tests on both Python 3.13 and 3.14. Tests include leakage perturbation, next-session maturity, exact-threshold rules, finite capital/costs, continuous folds, weighted asymmetry, all app pages, immutable checksums, latest-data boundaries and a hosted entry-point launch from an unrelated working directory. Independent research and app reviews found no remaining material issues after regression fixes.
 
 The research command requires the frozen corrected snapshot under data/raw/full_ten_stocks_corrected. It is included in the self-contained local archive; raw caches stay excluded from Git. A fresh GitHub checkout can display all saved results immediately without raw data. To repeat the study using an existing snapshot:
 
